@@ -11,4 +11,4 @@ width = float(input())
 perimetro = 2 * (height + width)
 
 #Diagonal
-diagonal =
+#diagonal = 
