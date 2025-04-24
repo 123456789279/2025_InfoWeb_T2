@@ -16,4 +16,10 @@
 #volume = (4 / 3,0) * pi * R**3
 #print(f"VOLUME = {volume:.3f}")
 
-#2416
+#1015
+x1 = int(input())
+x2 = int(input())
+y1 = int(input())
+y2 = int(input())
+Distance = ((x2 - x1) ** 2) + ((y2 - y1) ** 2)
+print(f"{Distance:.4f}")
