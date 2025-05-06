@@ -1,12 +1,12 @@
 class viagem:
     def _init_(self):
-        self.distancia = 20
-        self.tempo = 8.00
+        self.distancia = 200
+        self.tempo = 2
     def velocidade_media(self):
         vm = self.distancia / self.tempo
         return vm
 
 x = viagem()
-x.distancia = 25
-x.tempo = 8.30
+x.distancia = 200
+x.tempo = 4
 print(x.velocidade_media()) # o self e x
