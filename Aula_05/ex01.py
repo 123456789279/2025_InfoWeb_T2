@@ -8,7 +8,7 @@ class circulo:
         C = 2 * 3,14 * self.raio
         return C
 
-x = circulo
+x = circulo()
 x.raio = 5
 print(x.area()) # o self e x
 print(x.circuferencia()) # o self e x
