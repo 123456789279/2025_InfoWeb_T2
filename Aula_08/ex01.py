@@ -28,10 +28,10 @@ class Triangulo:
         self.__b = 0
         self.__h = 0
     def set_b(self, v):  # método de acesso: set para ajustar o valor do atributo
-        if v < 0: raise ValueError("O b de ser maior do que zero")
+        if v < 0: raise ValueError("O b de ser maior do que zero")   # validação
         self.__b = v
-    def set_h(self, v):  # método de acesso: set para ajustar o valor do atributo
-        if v < 0: raise ValueError("O h de ser maior do que zero")
+    def set_h(self, v):
+        if v < 0: raise ValueError("O h de ser maior do que zero")   # validação
         self.__h = v
     def get_b(self):     # método de acesso: get para retornar o valor do atributo
         return self.__b
