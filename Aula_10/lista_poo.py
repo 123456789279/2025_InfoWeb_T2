@@ -28,6 +28,26 @@ x.distancia = 200
 x.tempo = 4
 print(x.set__velocidade_media()) # o self e x
 
+#3 - Uma Conta Banacaria
+class conta_bancaria:
+    def _init_(self):
+        self.__nome = "Gilbert"
+        self.__numero = 1028922
+        self.__saldo = 100.000
+    def set__deposito(self):
+        self.__saldo += self.numero
+        print(f"Depósito de {self.valor} realizado com sucesso. Novo saldo: {self.saldo}")
+    def get__saque(self):
+        if 0 < self.numero <= self.saldo:
+            self.saldo -= self.numero
+            print(f"Saque de {self.numero} realizado com sucesso. Novo saldo: {self.saldo}")
+        else:
+            print("Saque não autorizado. Saldo insuficiente ou valor inválido.")
 
-
+x = conta_bancaria()
+x.nome = "Ranielly"
+x.numero = 1.000
+x.saldo = 100.000
+print(x.deposito())
+print(x.saque())
 
