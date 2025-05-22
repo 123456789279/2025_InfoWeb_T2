@@ -17,16 +17,16 @@ print(x.get__circuferencia()) # o self e x
 #2 - Uma Viagem
 class viagem:
     def _init_(self):
-        self.distancia = 200
-        self.tempo = 2
-    def velocidade_media(self):
-        vm = self.distancia / self.tempo
+        self.__distancia = 200
+        self.__tempo = 2
+    def set__velocidade_media(self):
+        vm = self.__distancia / self.__tempo
         return vm
 
 x = viagem()
 x.distancia = 200
 x.tempo = 4
-print(x.velocidade_media()) # o self e x
+print(x.set__velocidade_media()) # o self e x
 
 
 
