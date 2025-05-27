@@ -35,7 +35,7 @@ class conta_bancaria:
         self.__numero = ""
         self.__saldo = 0.0
     def set_titular(self, t):
-        if t == "": raise ValueError()
+        if t == "": raise ValueError("Nome nao pode ser vazio")
         self.__titular = t
     def get_titular(self):
         return self.__titular
