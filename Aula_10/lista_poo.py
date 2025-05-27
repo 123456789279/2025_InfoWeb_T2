@@ -41,10 +41,10 @@ class conta_bancaria:
         return self.__titular
     def get_saldo(self):
         return self.__saldo
-    def set__deposito(self):
-        self.__saldo += self.__numero
+    def set__deposito(self, v):
+        if v < 0: raise ValueError()
         print(f"Depósito de {self.__valor} realizado com sucesso. Novo saldo: {self.__saldo}")
-    def get__saque(self):
+    def get__saque(self, v):
         if 0 < self.__numero <= self.__saldo:
             self.__saldo -= self.__numero
             print(f"Saque de {self.__numero} realizado com sucesso. Novo saldo: {self.__saldo}")
