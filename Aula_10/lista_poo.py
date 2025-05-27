@@ -8,7 +8,7 @@ class circulo:
     def get_circuferencia(self):
         C = 2 * 3,14 * self.__raio
         return C
-    
+
 x = circulo()
 x.__raio = 5
 print(x.set__area()) # o self e x
@@ -31,21 +31,24 @@ print(x.set__velocidade_media()) # o self e x
 #3 - Uma Conta Banacaria
 class conta_bancaria:
     def _init_(self):
-        self.__nome = "Gilbert"
-        self.__numero = 1028922
+        self.__titular = ""
+        self.__numero = ""
         self.__saldo = 100.000
+    def set_titular(self, t):
+        if t == "": raise ValueError()
+        self.__titular = t
     def set__deposito(self):
-        self.__saldo += self.numero
-        print(f"Depósito de {self.valor} realizado com sucesso. Novo saldo: {self.saldo}")
+        self.__saldo += self.__numero
+        print(f"Depósito de {self.__valor} realizado com sucesso. Novo saldo: {self.__saldo}")
     def get__saque(self):
-        if 0 < self.numero <= self.saldo:
-            self.saldo -= self.numero
-            print(f"Saque de {self.numero} realizado com sucesso. Novo saldo: {self.saldo}")
+        if 0 < self.__numero <= self.__saldo:
+            self.__saldo -= self.__numero
+            print(f"Saque de {self.__numero} realizado com sucesso. Novo saldo: {self.__saldo}")
         else:
             print("Saque não autorizado. Saldo insuficiente ou valor inválido.")
 
 x = conta_bancaria()
-x.nome = "Ranielly"
+x.titular = "Ranielly"
 x.numero = 1.000
 x.saldo = 100.000
 print(x.deposito())
