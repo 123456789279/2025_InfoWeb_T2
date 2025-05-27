@@ -45,6 +45,7 @@ class conta_bancaria:
         if v < 0: raise ValueError()
         print(f"Depósito de {self.__valor} realizado com sucesso. Novo saldo: {self.__saldo}")
     def get__saque(self, v):
+        if v < 0: raise ValueError()
         if 0 < self.__numero <= self.__saldo:
             self.__saldo -= self.__numero
             print(f"Saque de {self.__numero} realizado com sucesso. Novo saldo: {self.__saldo}")
