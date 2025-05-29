@@ -25,3 +25,7 @@ print(x.calcular_area())
 print(x.calcular_diagonal())
 
 # 2 - Um Frete
+class Frete:
+    def __init__(self):
+        self.__distancia = ""
+        self.__peso = ""
