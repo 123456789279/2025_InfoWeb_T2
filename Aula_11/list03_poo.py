@@ -1,3 +1,4 @@
+# 1 - Um Retangulo
 class Retangulo:
     def __init__(self):
         self.__base = ""
@@ -22,3 +23,5 @@ x.set__base(10)
 x.set__altura(20)
 print(x.calcular_area())
 print(x.calcular_diagonal())
+
+# 2 - Um Frete
