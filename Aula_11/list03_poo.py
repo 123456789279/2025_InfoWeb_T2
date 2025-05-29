@@ -15,7 +15,7 @@ class Retangulo:
     def calcular_area(self):
         return self.__base * self.__altura
     def calcular_diagonal(self):
-        return (set.__base ** 2 + set.__altura ** 2) ** 0.5
+        return (self.__base ** 2 + self.__altura ** 2) ** 0.5
 
 x = Retangulo()
 x.set__base(10)
