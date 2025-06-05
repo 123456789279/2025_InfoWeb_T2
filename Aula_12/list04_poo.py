@@ -81,7 +81,6 @@ class PaisUI:
     def main():
         op = 0
         while op != 9:
-           op = self.menu()
            op = PaisUI.menu()
            if op == 1: PaisUI.densidade()
            if op == 2: PaisUI.fim()
