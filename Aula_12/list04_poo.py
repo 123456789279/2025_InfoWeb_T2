@@ -55,7 +55,7 @@ class Pais:
         self.__populacao = ""
         self.__area = ""
     def set__nome(self, nome):
-        if nome < 0: raise ValueError("O nome deve ter mais que 0 letras")
+        if len(nome) < 0: raise ValueError("O nome deve ter mais que 0 letras")
         self.__nome = nome
     def set__populacao(self, populacao):
         if populacao < 0: raise ValueError("A populacao deve ser maior que 0")
@@ -69,3 +69,31 @@ class Pais:
         return self.__populacao
     def get__area(self):
         return self.__area
+    def densidade(self):
+        return self.__populacao // self.__area
+    
+class PaisUI:
+    @staticmethod
+    def menu():
+       op = int(input("Informe uma opção: 1 – Calcular, 2 – Fim: "))
+       return op
+    @staticmethod
+    def main():
+        op = 0
+        while op != 9:
+           op = self.menu()
+           op = PaisUI.menu()
+           if op == 1: PaisUI.densidade()
+           if op == 2: PaisUI.fim()
+    @staticmethod
+    def consumo():
+        x = Pais()
+        x.set_nome(int(input("Informe o nome do pais: ")))
+        x.set_populacao(int(input("Informe o popilacao do pais: ")))
+        x.set_area(int(input("Informe a area do pais: ")))
+        print(f"O total de consumo da viagem é {x.densidade()}")
+    @staticmethod
+    def fim():
+        print("Programa encerrado")
+
+PaisUI.main()
