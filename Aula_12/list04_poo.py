@@ -85,7 +85,7 @@ class PaisUI:
            if op == 1: PaisUI.densidade()
            if op == 2: PaisUI.fim()
     @staticmethod
-    def consumo():
+    def densidade():
         x = Pais()
         x.set_nome(int(input("Informe o nome do pais: ")))
         x.set_populacao(int(input("Informe o popilacao do pais: ")))
