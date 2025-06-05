@@ -34,11 +34,16 @@ class ViagemUI:
            # op = self.menu()
            op = ViagemUI.menu()
            if op == 1: ViagemUI.consumo()
-           if op == 2: ViagemUI.Fim()
+           if op == 2: ViagemUI.fim()
     @staticmethod
-    def viagem():
+    def consumo():
         x = Viagem()
         x.set_destino(int(input("Informe o destino da viagem: ")))
         x.set_distancia(int(input("Informe o distancia da viagem: ")))
         x.set_litros(int(input("Informe a quantidade de litros da viagem: ")))
         print(f"O total de consumo da viagem é {x.consumo()}")
+    @staticmethod
+    def fim():
+        print("Programa encerrado")
+
+ViagemUI.main()
