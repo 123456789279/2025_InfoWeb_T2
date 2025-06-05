@@ -24,5 +24,21 @@ class Viagem:
 
 class ViagemUI:
     @staticmethod
+    def manu():
+       op = int(input("Informe uma opção: 1 – Calcular, 2 – Fim: "))
+       return op
+    @staticmethod
     def main():
-      x = Viagem()
+        op = 0
+        while op != 9:
+           # op = self.menu()
+           op = ViagemUI.menu()
+           if op == 1: ViagemUI.consumo()
+           if op == 2: ViagemUI.Fim()
+    @staticmethod
+    def viagem():
+        x = Viagem()
+        x.set_destino(int(input("Informe o destino da viagem: ")))
+        x.set_distancia(int(input("Informe o distancia da viagem: ")))
+        x.set_litros(int(input("Informe a quantidade de litros da viagem: ")))
+        print(f"O total de consumo da viagem é {x.consumo()}")
