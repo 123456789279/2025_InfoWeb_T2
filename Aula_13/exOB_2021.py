@@ -7,6 +7,17 @@ x = [Cibele, Camila, Celeste]
 x.sort()
 print(x[1])
 
+#Tempo de resposta
+n = int(input())
+
+
+
+
+
+
+
+
+
 #Zero para cancelar
 n = int(input())
 lista = []
