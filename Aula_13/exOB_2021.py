@@ -8,8 +8,11 @@ x.sort()
 print(x[1])
 
 #Zero para cancelar
-N = [int(input()), int(input()), int(input()), int(input()), int(input())]
-i = 0
-while i in N(1, 0):
-    if 1 <= N <= 100.000:
-        print()
+n = int(input())
+lista = []
+for k in range(n):
+    x = int(input())
+    if x != 0: lista.append(x)
+    else: lista.pop()
+if len(lista) == 0: print(0)
+else: print(sum(lista))
