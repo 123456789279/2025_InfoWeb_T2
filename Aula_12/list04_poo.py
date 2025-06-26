@@ -89,12 +89,18 @@ class ContatoUI:
         #print(cls.__contatos)
         for c in cls.__contatos:
             print(c)
+
     @classmethod    
     def atualizar(cls):
-        pass
+        atualizar = input("Informe o nome que deseja atualizar: ")
+        for c in cls.__contatos:
+            if c.get_atualizar().insert(2, atualizar): print(c)
     @classmethod    
     def excluir(cls):
-        pass
+        excluir = input("Informe o nome que deseja excluir: ")
+        for c in cls.__contatos:
+            if c.get_excluir().remove(excluir): print(c)
+
     @classmethod    
     def pesquisar(cls):
         nome = input("Informe o nome: ")
