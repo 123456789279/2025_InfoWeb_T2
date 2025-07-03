@@ -27,12 +27,12 @@ class BingoUI:
         op = 0
         while op != 9:
            op = self.menu()
-           op = ViagemUI.menu()
-           if op == 1: ViagemUI.consumo()
-           if op == 2: ViagemUI.fim()
+           op = BingoUI.menu()
+           if op == 1: BingoUI.consumo()
+           if op == 2: BingoUI.fim()
     @staticmethod
     def consumo():
-        x = Viagem()
+        x = BingoUI()
         x.set_destino(int(input("Informe o destino da viagem: ")))
         x.set_distancia(int(input("Informe o distancia da viagem: ")))
         x.set_litros(int(input("Informe a quantidade de litros da viagem: ")))
@@ -86,12 +86,12 @@ BingoUI.main()
 #            print(c)
 #    @classmethod    
 #    def atualizar(cls):
-#        atualizar = input("Informe o nome que deseja atualizar: ")
+#        atualizar = input("Informe o id que deseja atualizar: ")
 #        for c in cls.__contatos:
 #            if c.get_atualizar().insert(2, atualizar): ContatoUI.insert(c)
 #    @classmethod    
 #    def excluir(cls):
-#        excluir = input("Informe o nome que deseja excluir: ")
+#        excluir = input("Informe o id que deseja excluir: ")
 #        for c in cls.__contatos:
 #            if c.get_excluir().remove(excluir): ContatoUI.remove(c)
 #    @classmethod    
