@@ -14,9 +14,13 @@ class Bingo:
         return self.__numBolas
     def get__Bolas(self):
         return self.__Bolas
-    def sortea(self):
-        x = random.randint(1, self.__Bolas)
-        self.__Bolas.append(x)
+    def sortear(self):
+        if len(self.__bolas) == self.__num_bolas:
+            return -1
+        x = random.randint(1, self.__num_bolas)
+        while x in self.__bolas:
+            x = random.randint(1, self.__num_bolas)
+        self.__bolas.append(x)
         return x
     def sorteados(self):
         if self.__Bolas <= 5:
