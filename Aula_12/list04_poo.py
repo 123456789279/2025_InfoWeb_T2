@@ -1,21 +1,26 @@
 # 1. Jogo de Bingo
+import random
 class Bingo:
-    def __init__(self):
-        self.__numBolas = ""
-        self.__Bolas = ""
+    def __init__(self, numBolas):
+        self.__numBolas = numBolas
+        self.__Bolas = []
     def set__numBolas(self, numBolas):
-        if numBolas < 0: raise ValueError("O numBolas deve ser maior que 0")
+        if numBolas <= 5: raise ValueError("O numBolas deve ser no minimo 5")
         self.__numBolas = numBolas
     def set__Bolas(self, Bolas):
-        if Bolas < 0: raise ValueError("O Bolas deve ser maior que 0")
+        if Bolas <= 5: raise ValueError("O Bolas deve ser no minimo 5")
         self.__Bolas = Bolas
     def get__numBolas(self):
         return self.__numBolas
     def get__Bolas(self):
         return self.__Bolas
-    def iniciar(self):
-        if self.__Bolas <= 10:
-          return random.self.__Bolas(a)
+    def sortea(self):
+        x = random.randint(1, self.__Bolas)
+        self.__Bolas.append(x)
+        return x
+    def sorteados(self):
+        if self.__Bolas <= 5:
+          return sorted(self.__Bolas)
 
 class BingoUI:
     @staticmethod
