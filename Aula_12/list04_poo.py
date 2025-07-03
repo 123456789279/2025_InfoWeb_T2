@@ -36,6 +36,12 @@ class BingoUI:
             if op == 2: BingoUI.sortear(self.__jogo)
             if op == 3: BingoUI.sorteados(self.__jogo)
     @staticmethod
+    def set.__jogo(self, jogo)
+        self.__jogo = jogo
+    @staticmethod
+    def get.__jogo(self, jogo)
+        return self.__jogo
+    @staticmethod
     def menu():
         return int(input("1-Iniciar Jogo, 2-Sortear, 3-Sorteados, 4-Fim: "))
     @staticmethod
@@ -44,10 +50,10 @@ class BingoUI:
         return self.__jogo
     @staticmethod
     def sortear(self.__jogo):
-        print(jogo.sortear())
+        print(self.__jogo.sortear())
     @staticmethod
-    def sorteados(self.__jogo):
-        print(jogo.sorteados())
+    def sorteados(self.__self.__jogo):
+        print(self.__jogo.sorteados())
 
 BingoUI.main()
 
