@@ -15,12 +15,12 @@ class Bingo:
     def get__Bolas(self):
         return self.__Bolas
     def sortear(self):
-        if len(self.__bolas) == self.__num_bolas:
+        if len(self.__Bolas) == self.__numBolas:
             return -1
-        x = random.randint(1, self.__num_bolas)
-        while x in self.__bolas:
-            x = random.randint(1, self.__num_bolas)
-        self.__bolas.append(x)
+        x = random.randint(1, self.__numBolas)
+        while x in self.__Bolas:
+            x = random.randint(1, self.__numBolas)
+        self.__Bolas.append(x)
         return x
     def sorteados(self):
         if self.__Bolas <= 5:
@@ -32,24 +32,22 @@ class BingoUI:
         op = 0
         while op != 4:
             op = BingoUI.menu()
-            if op == 1: jogo = BingoUI.iniciar_jogo()
-            if op == 2: BingoUI.sortear(jogo)
-            if op == 3: BingoUI.sorteados(jogo)
+            if op == 1: self.__jogo = BingoUI.iniciar_jogo()
+            if op == 2: BingoUI.sortear(self.__jogo)
+            if op == 3: BingoUI.sorteados(self.__jogo)
     @staticmethod
     def menu():
         return int(input("1-Iniciar Jogo, 2-Sortear, 3-Sorteados, 4-Fim: "))
     @staticmethod
-    def iniciar_jogo():
-        jogo = Bingo(int(input("Informe o número de bolas: ")))
-        return jogo
+    def iniciar_self.__jogo():
+        self.__jogo = Bingo(int(input("Informe o número de bolas: ")))
+        return self.__jogo
     @staticmethod
-    def sortear(jogo):
+    def sortear(self.__jogo):
         print(jogo.sortear())
     @staticmethod
-    def sorteados(jogo):
+    def sorteados(self.__jogo):
         print(jogo.sorteados())
-
-BingoUI.main()
 
 BingoUI.main()
 
