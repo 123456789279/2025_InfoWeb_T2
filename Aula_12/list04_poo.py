@@ -24,27 +24,28 @@ class Bingo:
 
 class BingoUI:
     @staticmethod
-    def menu():
-       op = int(input("Informe uma opção: 1 – Calcular, 2 – Fim: "))
-       return op
-    @staticmethod
     def main():
         op = 0
-        while op != 9:
-           op = self.menu()
-           op = BingoUI.menu()
-           if op == 1: BingoUI.consumo()
-           if op == 2: BingoUI.fim()
+        while op != 4:
+            op = BingoUI.menu()
+            if op == 1: jogo = BingoUI.iniciar_jogo()
+            if op == 2: BingoUI.sortear(jogo)
+            if op == 3: BingoUI.sorteados(jogo)
     @staticmethod
-    def consumo():
-        x = BingoUI()
-        x.set_destino(int(input("Informe o destino da viagem: ")))
-        x.set_distancia(int(input("Informe o distancia da viagem: ")))
-        x.set_litros(int(input("Informe a quantidade de litros da viagem: ")))
-        print(f"O total de consumo da viagem é {x.consumo()}")
+    def menu():
+        return int(input("1-Iniciar Jogo, 2-Sortear, 3-Sorteados, 4-Fim: "))
     @staticmethod
-    def fim():
-        print("Programa encerrado")
+    def iniciar_jogo():
+        jogo = Bingo(int(input("Informe o número de bolas: ")))
+        return jogo
+    @staticmethod
+    def sortear(jogo):
+        print(jogo.sortear())
+    @staticmethod
+    def sorteados(jogo):
+        print(jogo.sorteados())
+
+BingoUI.main()
 
 BingoUI.main()
 
