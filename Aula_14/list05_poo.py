@@ -12,3 +12,5 @@ class Paciente:
         self.__cpf = cpf
     def set__telefone(self, telefone):
         self.__telefone = telefone
+    def set__nascimento(self, nascimento):
+        self.__nascimento = nascimento
