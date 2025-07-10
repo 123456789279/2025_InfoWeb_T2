@@ -17,6 +17,7 @@ class Paciente:
         if self.__telefone <= 5: raise ValueError("O telefone deve ter no minimo 5 digitos")
         self.__telefone = telefone
     def set__nascimento(self, nascimento):
+        nascimento = datetime.datetime(int(input()), int(input()), int(input()))
         self.__nascimento = nascimento
     def get__nome(self):
         return self.__nome
@@ -26,3 +27,7 @@ class Paciente:
         return self.__telefone
     def get__nascimento(self):
         return self.__nascimento
+    def idade(self, nascimento):
+        nascimento = datetime.datetime.strptime("%m/%Y ")
+        return nascimento.month and nascimento.year
+    def ToString(self):
