@@ -14,3 +14,11 @@ class Paciente:
         self.__telefone = telefone
     def set__nascimento(self, nascimento):
         self.__nascimento = nascimento
+    def get__nome(self):
+        return self.__nome
+    def get__cpf(self):
+        return self.__cpf
+    def get__telefone(self):
+        return self.__telefone
+    def get__nascimento(self):
+        return self.__nascimento
