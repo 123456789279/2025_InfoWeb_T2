@@ -40,14 +40,19 @@ class PacienteUI:
     @classmethod
     def main():
         op = 0
-        while op != 4:
+        while op != 1:
             op = PacienteUI.menu()
-            if op == 1: PacienteUI.nome()
-            if op == 2: PacienteUI.cpf()
-            if op == 3: PacienteUI.telefone()
-            if op == 4: PacienteUI.nascimento()
+            if op == 1: PacienteUI.inserir()
     @classmethod    
     def menu(cls):
-        print("1-Nome, 2-CPF, 3-Telefone, 4-Data de Nascimento, 6-Fim")
+        print("1-Inserir, 2-Fim")
         return int(input("Escolha uma opção: "))
+    @classmethod    
+    def inserir(cls):
+        nome = input("Informe o nome do paciente: ")
+        cpf = int(input("Informe o cpf do paciente: "))
+        telefone = int(input("Informe o telefone do paciente: "))
+        nascimento = datetime.datetime(int(input("Informe o dia de nascimento do paciente: ")), int(input("Informe o mes de nascimento do paciente: ")), int(input("Informe o ano de nascimento do paciente: ")))
+        paciente = Paciente(nome, cpf, telefone, nascimento)
+        cls.__paciente.append(paciente)
     
