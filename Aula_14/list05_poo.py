@@ -31,3 +31,23 @@ class Paciente:
         nascimento = datetime.datetime.strptime("%m/%Y ")
         return nascimento.month and nascimento.year
     def ToString(self):
+        print(f"Nome de um paciente: {self.__nome}")
+        print(f"cpf de um paciente: {self.__cpf}")
+        print(f"Telefone de um paciente: {self.__telefone}")
+        print(f"Data de Nascimento de um paciente: {self.__nascimento}")
+
+class PacienteUI:
+    @classmethod
+    def main():
+        op = 0
+        while op != 4:
+            op = PacienteUI.menu()
+            if op == 1: PacienteUI.nome()
+            if op == 2: PacienteUI.cpf()
+            if op == 3: PacienteUI.telefone()
+            if op == 4: PacienteUI.nascimento()
+    @classmethod    
+    def menu(cls):
+        print("1-Nome, 2-CPF, 3-Telefone, 4-Data de Nascimento, 6-Fim")
+        return int(input("Escolha uma opção: "))
+    

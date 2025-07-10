@@ -1,61 +1,63 @@
+"""
 # 1. Jogo de Bingo
-import random
-class Bingo:
-    def __init__(self, numBolas):
-        self.__numBolas = numBolas
-        self.__Bolas = []
-    def set__numBolas(self, numBolas):
-        if numBolas <= 5: raise ValueError("O numBolas deve ser no minimo 5")
-        self.__numBolas = numBolas
-    def set__Bolas(self, Bolas):
-        if Bolas <= 5: raise ValueError("O Bolas deve ser no minimo 5")
-        self.__Bolas = Bolas
-    def get__numBolas(self):
-        return self.__numBolas
-    def get__Bolas(self):
-        return self.__Bolas
-    def sortear(self):
-        if len(self.__Bolas) == self.__numBolas:
-            return -1
-        x = random.randint(1, self.__numBolas)
-        while x in self.__Bolas:
-            x = random.randint(1, self.__numBolas)
-        self.__Bolas.append(x)
-        return x
-    def sorteados(self):
-        if self.__Bolas <= 5:
-          return sorted(self.__Bolas)
+#import random
+#class Bingo:
+#    def __init__(self, numBolas):
+#        self.__numBolas = numBolas
+#        self.__Bolas = []
+#    def set__numBolas(self, numBolas):
+#        if numBolas <= 5: raise ValueError("O numBolas deve ser no minimo 5")
+#        self.__numBolas = numBolas
+#    def set__Bolas(self, Bolas):
+#        if Bolas <= 5: raise ValueError("O Bolas deve ser no minimo 5")
+#        self.__Bolas = Bolas
+#    def get__numBolas(self):
+#        return self.__numBolas
+#    def get__Bolas(self):
+#        return self.__Bolas
+#    def sortear(self):
+#        if len(self.__Bolas) == self.__numBolas:
+#            return -1
+#        x = random.randint(1, self.__numBolas)
+#        while x in self.__Bolas:
+#            x = random.randint(1, self.__numBolas)
+#        self.__Bolas.append(x)
+#        return x
+#    def sorteados(self):
+#        if self.__Bolas <= 5:
+#          return sorted(self.__Bolas)
 
-class BingoUI:
-    @staticmethod
-    def main():
-        op = 0
-        while op != 4:
-            op = BingoUI.menu()
-            if op == 1: self.__jogo = BingoUI.iniciar_jogo()
-            if op == 2: BingoUI.sortear(self.__jogo)
-            if op == 3: BingoUI.sorteados(self.__jogo)
-    @staticmethod
-    def set.__jogo(self, jogo)
-        self.__jogo = jogo
-    @staticmethod
-    def get.__jogo(self, jogo)
-        return self.__jogo
-    @staticmethod
-    def menu():
-        return int(input("1-Iniciar Jogo, 2-Sortear, 3-Sorteados, 4-Fim: "))
-    @staticmethod
-    def iniciar_self.__jogo():
-        self.__jogo = Bingo(int(input("Informe o número de bolas: ")))
-        return self.__jogo
-    @staticmethod
-    def sortear(self.__jogo):
+#class BingoUI:
+#    @staticmethod
+#    def main():
+#        op = 0
+#        while op != 4:
+#            op = BingoUI.menu()
+#            if op == 1: self.__jogo = BingoUI.iniciar_jogo()
+#            if op == 2: BingoUI.sortear(self.__jogo)
+#            if op == 3: BingoUI.sorteados(self.__jogo)
+#    @staticmethod
+#    def set.__jogo(self, jogo)
+#        self.__jogo = jogo
+#    @staticmethod
+#    def get.__jogo(self, jogo)
+#        return self.__jogo
+#    @staticmethod
+#    def menu():
+#        return int(input("1-Iniciar Jogo, 2-Sortear, 3-Sorteados, 4-Fim: "))
+#    @staticmethod
+#    def iniciar_self.__jogo():
+#        self.__jogo = Bingo(int(input("Informe o número de bolas: ")))
+#        return self.__jogo
+#    @staticmethod
+#    def sortear(self.__jogo):
         print(self.__jogo.sortear())
     @staticmethod
     def sorteados(self.__self.__jogo):
         print(self.__jogo.sorteados())
 
 BingoUI.main()
+"""
 
 #2 Agenda de contatos
 #class Contato:
