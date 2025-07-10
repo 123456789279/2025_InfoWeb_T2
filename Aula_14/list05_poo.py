@@ -38,7 +38,7 @@ class Paciente:
 
 class PacienteUI:
     @classmethod
-    def main():
+    def main(cls):
         op = 0
         while op != 2:
             op = PacienteUI.menu()

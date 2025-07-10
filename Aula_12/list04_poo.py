@@ -85,7 +85,7 @@ BingoUI.main()
 #            if op == 5: ContatoUI.pesquisar()
 #    @classmethod    
 #    def menu(cls):
-#        print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir, 5-Pesquisar, 6-Fim")
+#       print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir, 5-Pesquisar, 6-Fim")
 #       return int(input("Escolha uma opção: "))
 #    @classmethod    
 #    def inserir(cls):
