@@ -1,3 +1,4 @@
+"""
 # 1. Um Paciente
 import datetime
 class Paciente:
@@ -62,4 +63,36 @@ class PacienteUI:
             print(c)
 
 PacienteUI.main()
-    
+"""
+
+# 2. Um Boleto
+import datetime
+class Boleto:
+    def __init__(self):
+        self.__codBarras = ""
+        self.__dateEmissao = ""
+        self.__dateVencimento = ""
+        self.__datePagto = ""
+        self.__valorBoleto = valor
+        self.__valorPago = 0
+        self.__situacaoPagamento = Pagamento.EmAberto 
+    def set__codBarras(self, codBarras):
+        if self.__codBarras <= 5: raise ValueError("O codBarras deve ter no minimo 5 digitos")
+        self.__codBarras = codBarras
+    def set__dateEmissao(self, dateEmissao):
+        dateEmissao = datetime.datetime(int(input()), int(input()), int(input()))
+        self.__dateEmissao = dateEmissao
+
+
+
+
+
+
+
+
+
+    def pagar(self, valorPago):
+        if valorPago == self.__valor_boleto:
+            self.__situacaoPagamento = Pagamento.Pago
+    def situacao(self):
+        return self.__situacaoPagamento
