@@ -40,3 +40,14 @@ class Treino:
                   tempo:self.__tempo}
     def __str__(self):
         return Treino
+    
+class TreinoUI:
+    @staticmethod
+    def main():
+        op = 0
+        while op != 4:
+            op = TreinoUI.menu()
+            if op == 1: TreinoUI.inserir(self.__Treino)
+            if op == 2: TreinoUI.listar(self.__Treino)
+            if op == 3: TreinoUI.atualizar(self.__Treino)
+            if op == 2: TreinoUI.excluir(self.__Treino)
