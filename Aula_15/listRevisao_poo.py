@@ -55,5 +55,11 @@ class TreinoUI:
     def menu():
        print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir, 5-Fim")
        return int(input("Escolha uma opção: "))
+    @staticmethod
+    def inserir(cls):
+        id = int(input("Informe o id do contato: "))
+        data = input("Informe o nome: ")
+        distancia = input("Informe o e-mail: ")
+        tempo = input("Informe o fone: ")
 
 TreinoUI.main()
