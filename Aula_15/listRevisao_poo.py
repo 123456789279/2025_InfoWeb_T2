@@ -15,10 +15,17 @@ class Treino:
         self.__data = data
     def set__distancia(self, distancia):
         self.__distancia = datetime.datetime.strptime(f"{int(input())}:{int(input())}:{int(input())}", "%H:%M:%S")
-        if self.__distancia <= 3: raise ValueError("A Distancia percorrida deve ter hora, minuto e segundo")
-        self.__data = distancia                
-
+        if self.__distancia <= 3: raise ValueError("A Distancia Percorrida deve ter hora, minuto e segundo")
+        self.__distancia = distancia
+    def set__tempo(self, tempo):
+        self.__tempo = datetime.datetime.strptime(f"{int(input())}:{int(input())}:{int(input())}", "%H:%M:%S")
+        if self.__tempo <= 3: raise ValueError("O Tempo da Corrida deve ter hora, minuto e segundo")
+        self.__tempo = tempo                       
     def get__id(self):
         return self.__id
     def get__data(self):
         return self.__data
+    def get__distancia(self):
+        return self.__distancia
+    def get__tempo(self):
+        return self.__tempo
