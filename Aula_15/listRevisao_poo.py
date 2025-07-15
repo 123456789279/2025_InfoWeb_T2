@@ -47,7 +47,13 @@ class TreinoUI:
         op = 0
         while op != 4:
             op = TreinoUI.menu()
-            if op == 1: TreinoUI.inserir(self.__Treino)
-            if op == 2: TreinoUI.listar(self.__Treino)
-            if op == 3: TreinoUI.atualizar(self.__Treino)
-            if op == 2: TreinoUI.excluir(self.__Treino)
+            if op == 1: TreinoUI.inserir()
+            if op == 2: TreinoUI.listar()
+            if op == 3: TreinoUI.atualizar()
+            if op == 4: TreinoUI.excluir()
+    @staticmethod        
+    def menu():
+       print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir, 5-Fim")
+       return int(input("Escolha uma opção: "))
+
+TreinoUI.main()
