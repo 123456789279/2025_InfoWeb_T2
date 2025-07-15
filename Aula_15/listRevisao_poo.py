@@ -57,9 +57,9 @@ class TreinoUI:
        return int(input("Escolha uma opção: "))
     @staticmethod
     def inserir(cls):
-        id = int(input("Informe o id do contato: "))
-        data = input("Informe o nome: ")
-        distancia = input("Informe o e-mail: ")
-        tempo = input("Informe o fone: ")
+        id = int(input("Informe o id do jogador: "))
+        data = datetime.datetime.strptime("Informe a data do treino: " f"{int(input())}/{int(input())}/{int(input())}", "%d:%m:%y")
+        distancia = datetime.datetime.strptime("Informe a distancia percorrida: " f"{int(input())}:{int(input())}:{int(input())}", "%H:%M:%S")
+        tempo = datetime.timedelta(hours=int(input(Informe)), minutes=int(input()), seconds=int(input()))
 
 TreinoUI.main()
