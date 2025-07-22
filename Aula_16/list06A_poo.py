@@ -5,7 +5,7 @@ class Cliente:
         self.__email = ""
         self.__fone = ""
     def set__id(self, id):
-        if self.__id <= 5: raise ValueError("O id deve ter no minimo 5 digitos")
+        if self.__id <= 5: raise ValueError("O id de um cliente deve ter no minimo 5 digitos")
         self.__id = id
     def set__nome(self, nome):
         if self.__nome <= 4: raise ValueError("O nome do cliente deve ter no minimo 4 letras")
@@ -14,4 +14,13 @@ class Cliente:
         if self.__email <= 4: raise ValueError("O E-mail do cliente deve ter no minimo 4 caracteris")
         self.__email = email
     def set__fone(self, fone):
-        if self.__id <= 5: raise ValueError("O id deve ter no minimo 5 digitos")
+        if self.__fone <= 5: raise ValueError("O fone deve ter no minimo 5 digitos no registro de um cliente, ou de uma empresa")
+        self.__fone = fone
+    def get__id(self):
+        return self.__nome
+    def get__nome(self):
+        return self.__nome
+    def get__email(self):
+        return self.__email
+    def get__fone(self):
+        return self.__fone
