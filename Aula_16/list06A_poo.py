@@ -24,3 +24,8 @@ class Cliente:
         return self.__email
     def get__fone(self):
         return self.__fone
+    def ToString(self, id, nome, email, fone):
+        return  {id: self.__id
+                 nome: self.__nome
+                 email: self.__email
+                 fone: self.__fone}
