@@ -1,7 +1,8 @@
 import streamlit as st
-from retanguloUI import Retangulo
+from retanguloUI import RetanguloUI
 
-Retangulo.main()
+RetanguloUI.main()
+
 """
 st.header("Ola mundo!")
 if st.button("Clique aqui"):
