@@ -48,4 +48,4 @@ class ManterServicoUI:
       if st.button("Excluir"):
         id = op.get_id()
         View.cliente_excluir(id)
-        st.success("Cliente excluído com sucesso")
+        st.success("Servico excluído com sucesso")
