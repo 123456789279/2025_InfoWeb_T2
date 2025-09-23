@@ -62,3 +62,13 @@ class ManterHorarioUI:
          if servico != None: id_servico = servico.get_id()
          View.horario_atualizar(op.get_id(), datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_cliente, id_servico) 
          st.success("Horário atualizado com sucesso")
+   def excluir():
+     horarios = View.horario_listar()
+     if len(horarios) == 0: st.write("Nenhum horário cadastrado")
+     else:
+       op = st.selectbox("Exclusão de Horários", horarios)
+       if st.button("Excluir"):
+         View.horario_excluir(op.get_id())
+         st.success("Horário excluído com sucesso")
+         time.sleep(2)
+         st.rerun()
