@@ -41,3 +41,14 @@ class ManterHorarioUI:
          id_servico = servico.get_id()
        View.horario_inserir(datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_cliente, id_servico)
        st.success("Horário inserido com sucesso")
+   def atualizar():
+     horarios = View.horario_listar()
+     if len(horarios) == 0: st.write("Nenhum horário cadastrado")
+     else:
+       clientes = View.cliente_listar()
+       servicos = View.servico_listar()
+       op = st.selectbox("Atualização de Horários", horarios)
+       data = st.text_input("Informe a nova data e horário do serviço", op.get_data().strftime("%d/%m/%Y %H:%M"))
+       confirmado = st.checkbox("Nova confirmação", op.get_confirmado())
+       id_cliente = None if op.get_id_cliente() in [0, None] else op.get_id_cliente()
+       id_servico = None if op.get_id_servico() in [0, None] else op.get_id_servico()
