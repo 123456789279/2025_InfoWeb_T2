@@ -25,3 +25,19 @@ class ManterHorarioUI:
          dic.append({"id" : obj.get_id(), "data" : obj.get_data(), "confirmado" : obj.get_confirmado(), "cliente" : cliente, "serviço" : servico})
        df = pd.DataFrame(dic)
        st.dataframe(df)
+   def inserir():
+     clientes = View.cliente_listar()
+     servicos = View.servico_listar()
+     data = st.text_input("Informe a data e horário do serviço", datetime.now().strftime("%d/%m/%Y %H:%M"))
+     confirmado = st.checkbox("Confirmado")
+     cliente = st.selectbox("Informe o cliente", clientes, index = None)
+     servico = st.selectbox("Informe o serviço", servicos, index = None)
+     if st.button("Inserir"):
+       id_cliente = None
+       id_servico = None
+       if cliente != None: 
+         id_cliente= cliente.get_id()
+       if servico != None: 
+         id_servico = servico.get_id()
+       View.horario_inserir(datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_cliente, id_servico)
+       st.success("Horário inserido com sucesso")
