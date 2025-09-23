@@ -12,3 +12,16 @@ class ManterHorarioUI:
      with tab2: ManterHorarioUI.inserir()
      with tab3: ManterHorarioUI.atualizar()
      with tab4: ManterHorarioUI.excluir()
+   def listar():
+     horarios = View.horario_listar()
+     if len(horarios) == 0: st.write("Nenhum horário cadastrado")
+     else:
+       dic = []
+       for obj in horarios:
+         cliente = View.cliente_listar_id(obj.get_id_cliente())
+         servico = View.servico_listar_id(obj.get_id_servico())
+         if cliente != None: cliente = cliente.get_nome()
+         if servico != None: servico = servico.get_descricao()
+         dic.append({"id" : obj.get_id(), "data" : obj.get_data(), "confirmado" : obj.get_confirmado(), "cliente" : cliente, "serviço" : servico})
+       df = pd.DataFrame(dic)
+       st.dataframe(df)
