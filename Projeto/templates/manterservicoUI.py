@@ -21,10 +21,10 @@ class ManterServicoUI: #Terminar depois, nao ta completo.
       st.dataframe(df)
   def inserir():
     nome = st.text_input("Informe o nome")
-    email = st.text_input("Informe o e-mail")
-    fone = st.text_input("Informe o fone")
+    descricao = st.text_input("Informe a descricao")
+    valor = st.text_input("Informe o valor")
     if st.button("Inserir"):
-      View.servico_inserir(nome, email, fone)
+      View.servico_inserir(nome, descricao, valor)
       st.success("Servico inserido com sucesso")
       time.sleep(2)
       st.rerun()
@@ -34,11 +34,11 @@ class ManterServicoUI: #Terminar depois, nao ta completo.
     else:
       op = st.selectbox("Atualização de Servico", servicos)
       nome = st.text_input("Novo nome", op.get_nome())
-      email = st.text_input("Novo e-mail", op.get_email())
-      fone = st.text_input("Novo fone", op.get_fone())
+      descricao = st.text_input("Nova descricao", op.get_descricao())
+      valor = st.text_input("Novo valor", op.get_valor())
       if st.button("Atualizar"):
         id = op.get_id()
-        View.servico_atualizar(id, nome, email, fone)
+        View.servico_atualizar(id, nome, descricao, valor)
         st.success("Servico atualizado com sucesso")
   def excluir():
     servicos = View.servico_listar()
