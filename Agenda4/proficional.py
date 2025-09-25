@@ -25,3 +25,6 @@ class Proficional:
     def to_json(self):
         dic = {"id":self.__id, "nome":self.__nome,"especialidade":self.__especialidade, "conselho":self.__conselho}
         return dic
+    @staticmethod
+    def from_json(dic):
+        return Proficional(dic["id"], dic["nome"], dic["especialidade"], dic["conselho"])
