@@ -24,12 +24,12 @@ class ManterServicoUI: #Terminar depois, nao ta completo.
     email = st.text_input("Informe o e-mail")
     fone = st.text_input("Informe o fone")
     if st.button("Inserir"):
-      View.cliente_inserir(nome, email, fone)
-      st.success("Cliente inserido com sucesso")
+      View.servico_inserir(nome, email, fone)
+      st.success("Servico inserido com sucesso")
       time.sleep(2)
       st.rerun()
   def atualizar():
-    servicos = View.cliente_listar()
+    servicos = View.servico_listar()
     if len(servicos) == 0: st.write("Nenhum servico cadastrado")
     else:
       op = st.selectbox("Atualização de Servico", servicos)
@@ -41,11 +41,11 @@ class ManterServicoUI: #Terminar depois, nao ta completo.
         View.servico_atualizar(id, nome, email, fone)
         st.success("Servico atualizado com sucesso")
   def excluir():
-    servicos = View.cliente_listar()
+    servicos = View.servico_listar()
     if len(servicos) == 0: st.write("Nenhum servico cadastrado")
     else:
       op = st.selectbox("Exclusão de Servicos", servicos)
       if st.button("Excluir"):
         id = op.get_id()
-        View.cliente_excluir(id)
+        View.servico_excluir(id)
         st.success("Servico excluído com sucesso")
