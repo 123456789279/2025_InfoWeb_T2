@@ -1,19 +1,19 @@
 class Servico:
-    def __init__(self):
-        self.__id = 0
-        self.__descricao = ""
-        self.__valor = 0
-    def set__id(self, id):
+    def __init__(self, id, descricao, valor):
         self.__id = id
-    def set__descricao(self, descricao):
         self.__descricao = descricao
-    def set__valor(self, valor):
         self.__valor = valor
-    def get__id(self):
+    def set_id(self, id):
+        self.__id = id
+    def set_descricao(self, descricao):
+        self.__descricao = descricao
+    def set_valor(self, valor):
+        self.__valor = valor
+    def get_id(self):
         return self.__id
-    def get__descricao(self):
+    def get_descricao(self):
         return self.__descricao
-    def get__valor(self):
+    def get_valor(self):
         return self.__valor
     def __str__(self):
         return f"{self.__id}-{self.__descricao}-{self.__valor}"
