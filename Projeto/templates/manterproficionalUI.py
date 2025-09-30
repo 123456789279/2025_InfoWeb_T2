@@ -42,6 +42,8 @@ class ManterProficionalUI:
         id = op.get_id()
         View.cliente_atualizar(id, nome, especialidade, conselho)
         st.success("Proficional atualizado com sucesso")
+        time.sleep(2)
+        st.rerun()
   def excluir():
     proficionais = View.cliente_listar()
     if len(proficionais) == 0: st.write("Nenhum proficional cadastrado")
@@ -51,3 +53,5 @@ class ManterProficionalUI:
         id = op.get_id()
         View.proficional_excluir(id)
         st.success("Proficional excluído com sucesso")
+        time.sleep(2)
+        st.rerun()

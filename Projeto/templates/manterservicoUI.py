@@ -38,6 +38,8 @@ class ManterServicoUI: #Terminar depois, nao ta completo.
         id = op.get_id()
         View.servico_atualizar(id, descricao, valor)
         st.success("Servico atualizado com sucesso")
+        time.sleep(2)
+        st.rerun()
   def excluir():
     servicos = View.servico_listar()
     if len(servicos) == 0: st.write("Nenhum servico cadastrado")
@@ -47,3 +49,5 @@ class ManterServicoUI: #Terminar depois, nao ta completo.
         id = op.get_id()
         View.servico_excluir(id)
         st.success("Servico excluído com sucesso")
+        time.sleep(2)
+        st.rerun()
