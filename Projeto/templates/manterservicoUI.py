@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 from views import View
-class ManterServicoUI: #Terminar depois, nao ta completo.
+class ManterServicoUI:
   def main():
     st.header("Cadastro de Servico")
     tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir",
