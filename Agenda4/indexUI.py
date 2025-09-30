@@ -1,4 +1,4 @@
-from Agenda4.manterproficionalUI import ManterProficionalUI
+from Projeto.templates.manterproficionalUI import ManterProficionalUI
 
 class IndexUI:
    def main():
