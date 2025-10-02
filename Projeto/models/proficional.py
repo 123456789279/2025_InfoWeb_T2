@@ -1,8 +1,8 @@
 class Proficional:
-    def __init__(self, id, nome, especiaçlidade, conselho):
+    def __init__(self, id, nome, especialidade, conselho):
         self.id(id)
         self.nome(nome)
-        self.especialidade(especiaçlidade)
+        self.especialidade(especialidade)
         self.conselho(conselho)
     def __str__(self):
         return f"{self.__id}-{self.__nome}-{self.__especialidade}-{self.__conselho}"
