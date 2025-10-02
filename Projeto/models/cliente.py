@@ -1,11 +1,12 @@
 import json
 
 class Cliente:
-    def __init__(self, id, nome, email, fone):
+    def __init__(self, id, nome, email, fone, senha):
         self.set_id(id)
         self.set_nome(nome)
         self.set_email(email)
         self.set_fone(fone)
+        self.set_senha(senha)
     def get_id(self): 
         return self.__id
     def get_nome(self): 
@@ -14,6 +15,8 @@ class Cliente:
         return self.__email
     def get_fone(self): 
         return self.__fone
+    def get_senha(self): 
+        return self.__senha
     def set_id(self, id): 
         self.__id = id
     def set_nome(self, nome): 
@@ -22,6 +25,8 @@ class Cliente:
         self.__email = email
     def set_fone(self, fone): 
         self.__fone = fone
+    def set_senha(self, senha): 
+        self.__senha = senha
     def to_json(self):
         dic = {"id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone}
         return dic  
