@@ -1,6 +1,7 @@
 from models.cliente import Cliente, ClienteDAO
 from models.servico import Servico, ServicoDAO
 from models.proficional import Proficional, ProficionalDAO
+from models.horario import Horario, HorarioDAO #Ta incompleto fazer depois
 
 class View:
 
