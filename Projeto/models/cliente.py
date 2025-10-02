@@ -28,13 +28,13 @@ class Cliente:
     def set_senha(self, senha): 
         self.__senha = senha
     def to_json(self):
-        dic = {"id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone}
+        dic = {"id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone, "senha":self.__senha}
         return dic  
     @staticmethod
     def from_json(dic):
-        return Cliente(dic["id"], dic["nome"], dic["email"], dic["fone"])
+        return Cliente(dic["id"], dic["nome"], dic["email"], dic["fone"], dic["senha"])
     def __str__(self):
-        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone}"
+        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone} - {self.__senha}"
 
 import json
 
