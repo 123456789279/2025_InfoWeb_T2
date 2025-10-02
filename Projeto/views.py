@@ -1,5 +1,6 @@
 from models.cliente import Cliente, ClienteDAO
 from models.servico import Servico, ServicoDAO
+from models.proficional import Proficional, ProficionalDAO
 
 class View:
 
@@ -30,4 +31,18 @@ class View:
     def servico_excluir(id):
         servico = Servico(id, "", "")
         ServicoDAO.excluir(servico)   
+
+    def proficional_inserir(descricao, valor):
+        proficional = Proficional(0, descricao, valor)
+        ProficionalDAO.inserir(proficional)
+    def proficional_listar():
+        return ProficionalDAO.listar()
+    def proficional_listar_id(id):
+        return ProficionalDAO.listar_id(id)
+    def proficional_atualizar(id, descricao, valor):
+        proficional = Proficional(id, descricao, valor)
+        ProficionalDAO.atualizar(proficional)
+    def proficional_excluir(id):
+        proficional = Proficional(id, "", "")
+        ProficionalDAO.excluir(proficional)   
                 
