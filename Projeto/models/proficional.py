@@ -33,11 +33,11 @@ class Proficional:
     def set_senha(self, senha):
         self.__senha = senha
     def to_json(self):
-        dic = {"id":self.__id, "nome":self.__nome,"especialidade":self.__especialidade, "conselho":self.__conselho}
+        dic = {"id":self.__id, "nome":self.__nome,"especialidade":self.__especialidade, "conselho":self.__conselho, "email":self.__email, "senha":self.__senha}
         return dic
     @staticmethod
     def from_json(dic):
-        return Proficional(dic["id"], dic["nome"], dic["especialidade"], dic["conselho"])
+        return Proficional(dic["id"], dic["nome"], dic["especialidade"], dic["conselho"], dic["email"], dic["senha"])
     
 import json
 
