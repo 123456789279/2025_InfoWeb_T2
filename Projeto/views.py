@@ -33,15 +33,15 @@ class View:
         servico = Servico(id, "", "")
         ServicoDAO.excluir(servico)   
 
-    def proficional_inserir(nome, especialidade, conselho):
-        proficional = Proficional(0, nome, especialidade, conselho)
+    def proficional_inserir(nome, especialidade, conselho, email, senha):
+        proficional = Proficional(0, nome, especialidade, conselho, email, senha)
         ProficionalDAO.inserir(proficional)
     def proficional_listar():
         return ProficionalDAO.listar()
     def proficional_listar_id(id):
         return ProficionalDAO.listar_id(id)
-    def proficional_atualizar(id, nome, especialidade, conselho):
-        proficional = Proficional(id, nome, especialidade, conselho)
+    def proficional_atualizar(id, nome, especialidade, conselho, email, senha):
+        proficional = Proficional(id, nome, especialidade, conselho, email, senha)
         ProficionalDAO.atualizar(proficional)
     def proficional_excluir(id):
         proficional = Proficional(id, "", "", "")
