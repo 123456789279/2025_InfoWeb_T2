@@ -18,10 +18,16 @@ class IndexUI:
         if op == "Cadastro de Serviços": ManterServicoUI.main()
         if op == "Cadastro de Proficionais": ManterProficionalUI.main()
         if op == "Cadastro de Horarios": ManterHorarioUI.main()
-
+    def menu_visitante():
+        op = st.sidebar.selectbox("Menu", ["Entrar no Sistema",
+            "Abrir Conta"])
+        if op == "Entrar no Sistema": LoginUI.main()
+        if op == "Abrir Conta": AbrirContaUI.main()
+    def menu_cliente():
+        op = st.sidebar.selectbox("Menu", ["Meus Dados"])
+        if op == "Meus Dados": PerfilClienteUI.main()
     def sidebar():
         IndexUI.menu_admin()
-
     def main():
         IndexUI.sidebar()
 
