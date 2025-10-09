@@ -26,6 +26,11 @@ class IndexUI:
     def menu_cliente():
         op = st.sidebar.selectbox("Menu", ["Meus Dados"])
         if op == "Meus Dados": PerfilClienteUI.main()
+    def sair_do_sistema():
+        if st.sidebar.button("Sair"):
+            del st.session_state["usuario_id"]
+            del st.session_state["usuario_nome"]
+            st.rerun()
     def sidebar():
         IndexUI.menu_admin()
     def main():
