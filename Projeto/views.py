@@ -44,7 +44,7 @@ class View:
         proficional = Proficional(id, nome, especialidade, conselho, email, senha)
         ProficionalDAO.atualizar(proficional)
     def proficional_excluir(id):
-        proficional = Proficional(id, "", "", "")
+        proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)   
 
     def horario_inserir(data, confirmado, cliente, servico, proficional):
@@ -58,5 +58,5 @@ class View:
         horario = Horario(id, data, confirmado, cliente, servico, proficional)
         HorarioDAO.atualizar(horario)
     def horario_excluir(id):
-        horario = Proficional(id, "", "", "")
+        horario = Proficional(id, "", "", "", "", "")
         HorarioDAO.excluir(horario)            
