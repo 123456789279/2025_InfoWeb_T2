@@ -59,4 +59,9 @@ class View:
         HorarioDAO.atualizar(horario)
     def horario_excluir(id):
         horario = Proficional(id, "", "", "", "", "")
-        HorarioDAO.excluir(horario)            
+        HorarioDAO.excluir(horario) 
+
+    def cliente_criar_admin():
+        for c in View.cliente_listar():
+           if c.get_email() == "admin": return
+        View.cliente_inserir("admin", "admin", "fone", "1234")   
