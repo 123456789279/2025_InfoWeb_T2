@@ -43,6 +43,9 @@ class IndexUI:
             IndexUI.sair_do_sistema()
             IndexUI.menu_admin()
     def main():
+        # verifica a existe o usuário admin
+        View.cliente_criar_admin()
+        # monta o sidebar
         IndexUI.sidebar()
 
 IndexUI.main()
