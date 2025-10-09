@@ -25,7 +25,7 @@ class ManterProficionalUI:
     especialidade = st.text_input("Informe a especialidade")
     conselho = st.text_input("Informe o conselho")
     email = st.text_input("Informe o email")
-    senha = st.text_input("Informe a senha")
+    senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
       View.cliente_inserir(id, nome, especialidade, conselho, email, senha)
       st.success("Proficionais inserido com sucesso")
