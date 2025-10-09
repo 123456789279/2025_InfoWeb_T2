@@ -41,7 +41,7 @@ class ManterProficionalUI:
       especialidade = st.text_input("Nova especialidade", op.get_especialidade())
       conselho = st.text_input("Novo conselho", op.get_conselho())
       email = st.text_input("Novo email", op.get_email())
-      senha = st.text_input("Nova senha", op.get_senha())
+      senha = st.text_input("Nova senha", op.get_senha(), type="password")
       if st.button("Atualizar"):
         id = op.get_id()
         View.cliente_atualizar(id, nome, especialidade, conselho, email, senha)
