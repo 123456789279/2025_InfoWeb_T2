@@ -1,9 +1,11 @@
 class Proficional:
-    def __init__(self, id, nome, especialidade, conselho):
+    def __init__(self, id, nome, especialidade, conselho, email, senha):
         self.id(id)
         self.nome(nome)
         self.especialidade(especialidade)
         self.conselho(conselho)
+        self.email(email)
+        self.senha(senha)
     def __str__(self):
         return f"{self.__id}-{self.__nome}-{self.__especialidade}-{self.__conselho}"
     def get_id(self):
@@ -14,6 +16,10 @@ class Proficional:
         return self.__especialidade 
     def get_conselho(self):
         return self.__conselho
+    def get_email(self):
+        return self.__email
+    def get_senha(self):
+        return self.__senha
     def set_id(self, id):
         self.__id = id
     def set_nome(self, nome):
@@ -22,6 +28,10 @@ class Proficional:
         self.__especialidade = especialidade
     def set_conselho(self, conselho):
         self.__conselho = conselho
+    def set_email(self, email):
+        self.__email= email
+    def set_senha(self, senha):
+        self.__senha = senha
     def to_json(self):
         dic = {"id":self.__id, "nome":self.__nome,"especialidade":self.__especialidade, "conselho":self.__conselho}
         return dic
