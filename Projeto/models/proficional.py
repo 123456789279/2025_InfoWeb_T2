@@ -84,11 +84,11 @@ class ProficionalDAO():
    def abrir(cls):
      cls.__objetos = []
      try:
-       with open("proficional.json", mode="r") as arquivo:
-         list_dic = json.load(arquivo)
-         for dic in list_dic:
+       wir dic in list_dic:
            obj = Proficional.from_json(dic)
-           cls.__objetos.append(obj)
+          th open("proficional.json", mode="r") as arquivo:
+         list_dic = json.load(arquivo)
+         fo cls.__objetos.append(obj)
      except FileNotFoundError:
        pass
 
