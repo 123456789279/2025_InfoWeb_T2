@@ -24,3 +24,12 @@ class AbrirMinhaAgendaUI:
           for obj in proficionais: list_dic.append(obj.to_json())
           df = pd.DataFrame(list_dic)
           st.dataframe(df)
+      def inserir():
+        nome_cliente = st.text_input("Informe o nome do cliente")
+        servico_realizado = st.text_input("Informe a servico que foi realizado")
+        servico_ser_realizado = st.text_input("Informe o servico a ser realizado")
+        if st.button("Inserir"):
+          View.cliente_inserir(nome_cliente, servico_realizado, servico_ser_realizado)
+          st.success("Realizado com sucesso")
+          time.sleep(2)
+          st.rerun()
