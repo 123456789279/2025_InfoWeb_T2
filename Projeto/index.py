@@ -12,7 +12,6 @@ from views import View
 import streamlit as st
 
 class IndexUI:
-
     def cliente_criar_admin():
         for c in View.cliente_listar():
            if c.get_email() == "admin": return
