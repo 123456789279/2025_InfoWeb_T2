@@ -89,7 +89,7 @@ class ProficionalDAO():
           for dic in list_dic:
             obj = Proficional.from_json(dic)
             cls.__objetos.append(obj)
-      except FileNotFoundError:
+     except FileNotFoundError:
         pass
 
    @classmethod
