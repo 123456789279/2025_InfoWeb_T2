@@ -7,12 +7,12 @@ import datetime
 class AbrirMinhaAgendaUI:
       def main():
           st.header("Abrir Conta no Sistema")
-          nome = st.text_input("Informe o nome")
-          email = st.text_input("Informe o e-mail")
-          fone = st.text_input("Informe o fone")
-          senha = st.text_input("Informe a senha", type="password")
+          data = st.text_input("Informe a data no formato dd/mm/aaaa")
+          horario_inicio = st.text_input("Informe o horario inicial no formato HH:MM")
+          horario_final = st.text_input("Informe o horario final no formato HH:MM")
+          intervalo = st.text_input("Informe o intervalo entre os horarios{min}")
           if st.button("Inserir"):
-              View.proficional_inserir(nome, email, fone, senha)
+              View.proficional_inserir(data, horario_inicio, horario_final, intervalo)
               st.success("agenda aberta com sucesso")
               time.sleep(2)
               st.rerun()
