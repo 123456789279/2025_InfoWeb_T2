@@ -40,8 +40,8 @@ class View:
     def proficional_inserir(nome, especialidade, conselho, email, senha):
         proficional = Proficional(0, nome, especialidade, conselho, email, senha)
         ProficionalDAO.inserir(proficional)
-    def profissional_listar():
-        r = ProfissionalDAO.listar()
+    def proficional_listar():
+        r = ProficionalDAO.listar()
         r.sort(key = lambda obj : obj.get_nome())
         return r
     def proficional_listar_id(id):
