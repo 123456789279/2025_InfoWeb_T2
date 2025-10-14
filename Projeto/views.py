@@ -68,3 +68,13 @@ class View:
     def horario_excluir(id):
         horario = Proficional(id, "", "", "", "", "")
         HorarioDAO.excluir(horario) 
+    def horario_agendar_horario(id_profissional):
+        r = []
+        agora = datetime.now()
+        for h in View.horario_listar():
+            if h.get_data() >= agora and h.get_confirmado() == False
+                and h.get_id_cliente() == None
+                and h.get_id_profissional() == id_profissional:
+                r.append(h)
+        r.sort(key = lambda h : h.get_data())
+        return r
