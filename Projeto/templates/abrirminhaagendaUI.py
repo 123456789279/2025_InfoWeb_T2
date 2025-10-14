@@ -17,11 +17,11 @@ class AbrirMinhaAgendaUI:
               time.sleep(2)
               st.rerun()
       def listar():
-        proficionais = View.proficional_listar()
-        if len(proficionais) == 0: st.write("Nenhum proficional cadastrado")
+        horarios = View.horario_listar()
+        if len(horarios) == 0: st.write("Nenhum horario listado")
         else:
           list_dic = []
-          for obj in proficionais: list_dic.append(obj.to_json())
+          for obj in horarios: list_dic.append(obj.to_json())
           df = pd.DataFrame(list_dic)
           st.dataframe(df)
       def inserir():
