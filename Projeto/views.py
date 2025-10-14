@@ -3,6 +3,8 @@ from models.servico import Servico, ServicoDAO
 from models.proficional import Proficional, ProficionalDAO
 from models.horario import Horario, HorarioDAO
 
+import datetime
+
 class View:
 
     def cliente_inserir(nome, email, fone, senha):
