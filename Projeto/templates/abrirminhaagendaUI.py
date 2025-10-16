@@ -25,7 +25,7 @@ class AbrirMinhaAgendaUI:
         else:
           list_dic = []
           for obj in horarios: list_dic.append(obj.to_json())
-          df = pd.DataFrame(list_dic)
+          df = horarios.DataFrame(list_dic)
           st.dataframe(df)
       def inserir():
         nome_cliente = st.text_input("Informe o nome do cliente")
