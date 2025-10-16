@@ -6,7 +6,7 @@ import datetime
 class ConfrirmarServicoUI:
       def confirmar():
           st.header("Abrir Conta no Sistema")
-          horario = st.text_datetime("Informe o horario")
+          horario = st.strptime_input("Informe o horario")
           cliente = st.text_input("Informe o cliente", type="password")
           if st.button("Inserir"):
               templates.abrirminhaagendaUI(horario, cliente)
