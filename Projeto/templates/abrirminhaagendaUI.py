@@ -1,6 +1,5 @@
 import streamlit as st
 from views import View
-from models.proficional import Proficional, ProficionalDAO
 import time
 import datetime
 
