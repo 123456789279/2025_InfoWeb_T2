@@ -37,8 +37,8 @@ class AbrirMinhaAgendaUI:
           st.success("Realizado com sucesso")
           time.sleep(2)
           st.rerun()
-        def alterar_senha():
-          proficionais = View.cliente_listar()
+        def alterar():
+          proficionais = View.abrirminhaagendaUI_alterar()
           if len(proficionais) == 0: st.write("Nenhuma senha cadastrada")
           else:
             op = st.selectbox("Atualização de Proficionais", proficionais)
