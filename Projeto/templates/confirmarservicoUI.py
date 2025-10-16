@@ -4,7 +4,7 @@ import time
 import datetime
 
 class ConfrirmarServicoUI:
-      def main():
+      def confirmar():
           st.header("Abrir Conta no Sistema")
           horario = st.text_datetime("Informe o horario")
           cliente = st.text_input("Informe o cliente", type="password")
