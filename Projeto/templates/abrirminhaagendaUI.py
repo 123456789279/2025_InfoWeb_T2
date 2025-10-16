@@ -37,15 +37,4 @@ class AbrirMinhaAgendaUI:
           st.success("Realizado com sucesso")
           time.sleep(2)
           st.rerun()
-        def alterar():
-          proficionais = View.proficional_alterar()
-          if len(proficionais) == 0: st.write("Nenhuma senha cadastrada")
-          else:
-            op = st.selectbox("Atualização de Proficionais", proficionais)
-            senha = st.text_input("Nova senha", op.get_senha(), type="password")
-            if st.button("Alterar_Senha"):
-              id = op.get_id()
-              View.cliente_atualizar(id, senha)
-              st.success("Senha alterada com sucesso")
-              time.sleep(2)
-              st.rerun()
+          

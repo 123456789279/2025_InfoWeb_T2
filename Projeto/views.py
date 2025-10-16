@@ -53,7 +53,10 @@ class View:
         ProficionalDAO.atualizar(proficional)
     def proficional_excluir(id):
         proficional = Proficional(id, "", "", "", "", "")
-        ProficionalDAO.excluir(proficional)   
+        ProficionalDAO.excluir(proficional)
+    def proficional_alterar(id, senha):
+        proficional = Proficional(id, senha)
+        ProficionalDAO.atualizar(proficional)   
 
     def horario_inserir(data, confirmado, cliente, servico, proficional):
         horario = Horario(0, data, confirmado, cliente, servico, proficional)

@@ -74,6 +74,14 @@ class ProficionalDAO():
        cls.salvar()
 
    @classmethod
+   def alterar(cls, obj):
+     aux = cls.listar_id(obj.get_id())
+     if aux != None:
+       cls.__objetos.remove(aux)
+       cls.__objetos.append(obj)
+       cls.salvar()
+
+   @classmethod
    def excluir(cls, obj):
      aux = cls.listar_id(obj.get_id())
      if aux != None:
