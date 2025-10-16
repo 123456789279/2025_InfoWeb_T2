@@ -12,11 +12,6 @@ from views import View
 import streamlit as st
 
 class IndexUI:
-    def cliente_criar_admin():
-        for c in View.cliente_listar():
-           if c.get_email() == "admin": 
-               return
-        View.cliente_inserir("admin", "admin", "fone", "1234")
     def menu_admin():            
         op = st.sidebar.selectbox("Menu", ["Cadastro de Clientes", "Cadastro de Serviços", "Cadastro de Proficionais", "Cadastro de Horarios"])
         if op == "Cadastro de Clientes": ManterClienteUI.main()

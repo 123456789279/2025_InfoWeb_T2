@@ -21,7 +21,12 @@ class View:
         ClienteDAO.atualizar(cliente)  
     def cliente_excluir(id):
         cliente = Cliente(id, "", "", "", "")
-        ClienteDAO.excluir(cliente)   
+        ClienteDAO.excluir(cliente) 
+    def cliente_criar_admin():
+        for c in View.cliente_listar():
+           if c.get_email() == "admin": 
+               return
+        View.cliente_inserir("admin", "admin", "fone", "1234")  
 
     def servico_inserir(descricao, valor):
         servico = Servico(0, descricao, valor)
