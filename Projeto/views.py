@@ -78,3 +78,4 @@ class View:
                 r.append(h)
         r.sort(key = lambda h : h.get_data())
         return r
+    
