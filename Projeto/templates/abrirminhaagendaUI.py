@@ -15,6 +15,10 @@ class AbrirMinhaAgendaUI:
               st.success("agenda aberta com sucesso")
               time.sleep(2)
               st.rerun()
+          View.abrirminhaagendaUI(datetime.strptime(horario_inicio, "%H:%M"), horario_inicio)
+          View.abrirminhaagendaUI(datetime.strptime(horario_final, "%H:%M"), horario_final)
+          View.abrirminhaagendaUI(datetime.strptime(intervalo, "%M"), intervalo)
+          st.success("Horário inserido com sucesso")
       def listar():
         horarios = View.horario_listar()
         if len(horarios) == 0: st.write("Nenhum horario listado")

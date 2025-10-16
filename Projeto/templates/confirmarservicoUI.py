@@ -3,7 +3,7 @@ from views import View
 import time
 import datetime
 class ConfirmarServicoUI:
-      def confirmar():
+      def main():
           st.header("Abrir Conta no Sistema")
           horario = st.strptime_input("Informe o horario")
           cliente = st.text_input("Informe o cliente", type="password")
