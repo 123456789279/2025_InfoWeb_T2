@@ -2,6 +2,7 @@ import streamlit as st
 from views import View
 import time
 import datetime
+import pandas as pd
 
 class AbrirMinhaAgendaUI:
       def main():
@@ -25,7 +26,7 @@ class AbrirMinhaAgendaUI:
         else:
           list_dic = []
           for obj in horarios: list_dic.append(obj.to_json())
-          df = horarios.DataFrame(list_dic)
+          df = pd.DataFrame(list_dic)
           st.dataframe(df)
       def inserir():
         nome_cliente = st.text_input("Informe o nome do cliente")
