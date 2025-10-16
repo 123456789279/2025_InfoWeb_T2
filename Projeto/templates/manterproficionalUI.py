@@ -59,7 +59,7 @@ class ManterProficionalUI:
         st.success("Proficional excluído com sucesso")
         time.sleep(2)
         st.rerun()
-    def alterar():
+    def alterar_senha():
       proficionais = View.proficional_alterar()
       if len(proficionais) == 0: st.write("Nenhuma senha cadastrada")
       else:

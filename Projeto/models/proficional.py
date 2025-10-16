@@ -74,7 +74,7 @@ class ProficionalDAO():
        cls.salvar()
 
    @classmethod
-   def alterar(cls, obj):
+   def alterar_senha(cls, obj):
      aux = cls.listar_id(obj.get_id())
      if aux != None:
        cls.__objetos.remove(aux)
