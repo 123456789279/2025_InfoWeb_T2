@@ -23,7 +23,11 @@ class View:
         cliente = Cliente(id, "", "", "", "")
         ClienteDAO.excluir(cliente) 
 
-    def servico_inserir(descricao, valor):
+    def servico_inserir(descricao, valor): 
+        # verifica se a descrição já existe
+        for obj in View.servico_listar():
+            if obj.get_descricao() == descricao:
+                raise ValueError("Serviço já cadastrado")
         servico = Servico(0, descricao, valor)
         ServicoDAO.inserir(servico)
     def servico_listar():
