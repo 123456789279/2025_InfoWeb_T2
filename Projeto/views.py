@@ -44,7 +44,11 @@ class View:
         servico = Servico(id, descricao, valor)
         ServicoDAO.atualizar(servico)
     def servico_excluir(id):
-        servico = Servico(id, "", "")
+        # verifica se o serviço já foi agendado alguma vez
+        for obj in View.horario_listar():
+            if obj.get_id_servico() == id:
+                raise ValueError("Serviço já agendado: não é possível excluir")
+        servico = Servico(id, "sem descricao", 0)
         ServicoDAO.excluir(servico)   
 
     def proficional_inserir(nome, especialidade, conselho, email, senha):
