@@ -23,6 +23,11 @@ class ManterServicoUI:
     descricao = st.text_input("Informe a descricao")
     valor = st.text_input("Informe o valor")
     if st.button("Inserir"):
+      try:
+          View.servico_inserir(descricao, float(valor))
+          st.success("Serviço inserido com sucesso")
+      except ValueError as erro:
+          st.error(erro)
       View.servico_inserir(descricao, valor)
       st.success("Servico inserido com sucesso")
       time.sleep(2)
