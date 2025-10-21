@@ -37,6 +37,10 @@ class View:
     def servico_listar_id(id):
         return ServicoDAO.listar_id(id)
     def servico_atualizar(id, descricao, valor):
+        # verifica se a descrição já existe em outro serviço
+        for obj in View.servico_listar():
+            if obj.get_id() != id and obj.get_descricao() == descricao:
+                raise ValueError("Descriçao já cadastrada em outro serviço")
         servico = Servico(id, descricao, valor)
         ServicoDAO.atualizar(servico)
     def servico_excluir(id):
