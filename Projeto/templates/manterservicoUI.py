@@ -40,9 +40,12 @@ class ManterServicoUI:
       descricao = st.text_input("Nova descricao", op.get_descricao())
       valor = st.text_input("Novo valor", op.get_valor())
       if st.button("Atualizar"):
-        id = op.get_id()
-        View.servico_atualizar(id, descricao, valor)
-        st.success("Servico atualizado com sucesso")
+        try:
+            id = op.get_id()
+            View.servico_atualizar(id, descricao, valor)
+            st.success("Servico atualizado com sucesso")
+        except ValueError as erro:
+            st.error(erro)
         time.sleep(2)
         st.rerun()
   def excluir():
