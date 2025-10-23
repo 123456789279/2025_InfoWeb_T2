@@ -60,9 +60,12 @@ class ManterProficionalUI:
     else:
       op = st.selectbox("Exclusão de Proficionais", proficionais)
       if st.button("Excluir"):
-        id = op.get_id()
-        View.proficional_excluir(id)
-        st.success("Proficional excluído com sucesso")
+        try:
+            id = op.get_id()
+            View.proficional_excluir(id)
+            st.success("Proficional excluído com sucesso")
+        except ValueError as erro:
+            st.error(erro)
         time.sleep(2)
         st.rerun()
     def alterar_senha():
