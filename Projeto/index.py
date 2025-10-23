@@ -16,6 +16,10 @@ class IndexUI:
         for c in View.cliente_listar():
            if c.get_email() == "admin": 
                return
+        # verifia se o email_admin ja existe
+        for obj in View.cliente_listar():
+            if obj.get_email() == "admin":
+                raise ValueError("Admin já cadastrado")
         View.cliente_inserir("admin", "admin", "fone", "1234")  
     def menu_admin():            
         op = st.sidebar.selectbox("Menu", ["Cadastro de Clientes", "Cadastro de Serviços", "Cadastro de Proficionais", "Cadastro de Horarios"])
