@@ -115,6 +115,10 @@ class View:
         horario = Horario(id, data, confirmado, cliente, servico, proficional)
         HorarioDAO.atualizar(horario)
     def horario_excluir(id):
+        # verifica se o cliente já foi agendado alguma vez
+        for obj in View.cliente_listar():
+            if obj.get_id_cliente() == id:
+                raise ValueError("Cliente já agendado: não é possível excluir")
         horario = Proficional(id, "", "", "", "", "")
         HorarioDAO.excluir(horario) 
     def horario_agendar_horario(id_proficional):
