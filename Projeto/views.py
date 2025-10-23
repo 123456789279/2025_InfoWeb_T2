@@ -64,6 +64,10 @@ class View:
         ServicoDAO.excluir(servico)   
 
     def proficional_inserir(nome, especialidade, conselho, email, senha):
+        # verifia se o email ja existe
+        for obj in View.proficional_listar():
+            if obj.get_email() == email:
+                raise ValueError("Proficional já cadastrado")
         proficional = Proficional(0, nome, especialidade, conselho, email, senha)
         ProficionalDAO.inserir(proficional)
     def proficional_listar():
@@ -73,9 +77,17 @@ class View:
     def proficional_listar_id(id):
         return ProficionalDAO.listar_id(id)
     def proficional_atualizar(id, nome, especialidade, conselho, email, senha):
+        # verifica se o email já existe em outro serviço
+        for obj in View.proficional_listar():
+            if obj.get_id() != id and obj.get_email() == email:
+                raise ValueError("Email já cadastrado em outro proficional")
         proficional = Proficional(id, nome, especialidade, conselho, email, senha)
         ProficionalDAO.atualizar(proficional)
     def proficional_excluir(id):
+        # verifica se o proficional já foi agendado alguma vez
+        for obj in View.proficional_listar():
+            if obj.get_id_proficional() == id:
+                raise ValueError("Proficionaljá agendado: não é possível excluir")
         proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)
     def proficional_alterar_senha(id, senha):
