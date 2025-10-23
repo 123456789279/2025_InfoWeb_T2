@@ -51,8 +51,6 @@ class ManterClienteUI:
             st.success("Cliente atualizado com sucesso")
         except ValueError as erro:
             st.error(erro)
-        View.cliente_atualizar(id, nome, email, fone, senha)
-        st.success("Cliente atualizado com sucesso")
         time.sleep(2)
         st.rerun()
   def excluir():
