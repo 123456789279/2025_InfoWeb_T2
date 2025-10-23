@@ -28,8 +28,6 @@ class ManterServicoUI:
           st.success("Serviço inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
-      View.servico_inserir(descricao, valor)
-      st.success("Servico inserido com sucesso")
       time.sleep(2)
       st.rerun()
   def atualizar():

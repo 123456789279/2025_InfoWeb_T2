@@ -30,8 +30,6 @@ class ManterClienteUI:
           st.success("Cliente inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
-      View.cliente_inserir(nome, email, fone, senha)
-      st.success("Cliente inserido com sucesso")
       time.sleep(2)
       st.rerun()
   def atualizar():
