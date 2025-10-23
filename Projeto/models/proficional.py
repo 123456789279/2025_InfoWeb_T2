@@ -1,11 +1,11 @@
 class Proficional:
     def __init__(self, id, nome, especialidade, conselho, email, senha):
-        self.__id = id
-        self.__nome = nome
-        self.__especialidade = especialidade
-        self.__conselho = conselho
-        self.__email = email
-        self.__senha = senha
+        self.__id = 0
+        self.__nome = ""
+        self.__especialidade = ""
+        self.__conselho = ""
+        self.__email = ""
+        self.__senha = 0
     def __str__(self):
         return f"{self.__id}-{self.__nome}-{self.__especialidade}-{self.__conselho}"
     def get_id(self):
