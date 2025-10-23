@@ -27,8 +27,11 @@ class ManterProficionalUI:
     email = st.text_input("Informe o email")
     senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
-      View.cliente_inserir(id, nome, especialidade, conselho, email, senha)
-      st.success("Proficionais inserido com sucesso")
+      try:
+          View.cliente_inserir(float(id), float(nome), float(especialidade), float(conselho), email, float(senha))
+          st.success("Proficionais inserido com sucesso")
+      except ValueError as erro:
+          st.error(erro)
       time.sleep(2)
       st.rerun()
   def atualizar():
