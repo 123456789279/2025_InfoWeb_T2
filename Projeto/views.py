@@ -8,6 +8,10 @@ import datetime
 class View:
 
     def cliente_inserir(nome, email, fone, senha):
+        # verifia se o email ja existe
+        for obj in View.cliente_listar():
+            if obj.get_id() != id and obj.get_email() == email:
+                raise ValueError("Email ja cadastrado em outro cliente")
         cliente = Cliente(0, nome, email, fone, senha)
         ClienteDAO.inserir(cliente)
     def cliente_listar():
