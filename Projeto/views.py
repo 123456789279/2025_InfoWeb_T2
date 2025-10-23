@@ -10,8 +10,8 @@ class View:
     def cliente_inserir(nome, email, fone, senha):
         # verifia se o email ja existe
         for obj in View.cliente_listar():
-            if obj.get_id() != id and obj.get_email() == email:
-                raise ValueError("Email ja cadastrado em outro cliente")
+            if obj.get_email() == email:
+                raise ValueError("cliente já cadastrado")
         cliente = Cliente(0, nome, email, fone, senha)
         ClienteDAO.inserir(cliente)
     def cliente_listar():
@@ -21,6 +21,10 @@ class View:
     def cliente_listar_id(id):
         return ClienteDAO.listar_id(id)
     def cliente_atualizar(id, nome, email, fone, senha):
+        # verifica se o email já existe em outro serviço
+        for obj in View.cliente_listar():
+            if obj.get_id() != id and obj.get_email() == email:
+                raise ValueError("Email já cadastrado em outro cliente")
         cliente = Cliente(id, nome, email, fone, senha)
         ClienteDAO.atualizar(cliente)  
     def cliente_excluir(id):
