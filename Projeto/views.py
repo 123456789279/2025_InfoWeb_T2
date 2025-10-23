@@ -28,6 +28,10 @@ class View:
         cliente = Cliente(id, nome, email, fone, senha)
         ClienteDAO.atualizar(cliente)  
     def cliente_excluir(id):
+        # verifica se o cliente já foi agendado alguma vez
+        for obj in View.cliente_listar():
+            if obj.get_id_cliente() == id:
+                raise ValueError("Cliente já agendado: não é possível excluir")
         cliente = Cliente(id, "", "", "", "")
         ClienteDAO.excluir(cliente) 
 
