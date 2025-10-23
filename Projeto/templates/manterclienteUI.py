@@ -26,7 +26,7 @@ class ManterClienteUI:
     senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
       try:
-          View.cliente_inserir(email, float(fone))
+          View.cliente_inserir(float(nome), email, float(fone), float(senha))
           st.success("Cliente inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
@@ -45,6 +45,12 @@ class ManterClienteUI:
       senha = st.text_input("Nova senha", op.get_senha(), type="password")
       if st.button("Atualizar"):
         id = op.get_id()
+        try:
+            id = op.get_id()
+            View.cliente_atualizar(id, nome, email, fone, senha)
+            st.success("Cliente atualizado com sucesso")
+        except ValueError as erro:
+            st.error(erro)
         View.cliente_atualizar(id, nome, email, fone, senha)
         st.success("Cliente atualizado com sucesso")
         time.sleep(2)
