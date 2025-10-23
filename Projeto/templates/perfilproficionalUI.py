@@ -1,0 +1,23 @@
+import streamlit as st
+from views import View
+import time
+class PerfilProficionalUI:
+      def main():
+          st.header("Meus Dados")
+          op = View.proficional_listar_id(st.session_state["usuario_id"])
+          nome = st.text_input("Informe o novo nome", op.get_nome())
+          especialidade = st.text_input("Informe a nova especialidade", op.get_especialidade())
+          conselho = st.text_input("Informe o novo conselho", op.get_conselho())
+          email = st.text_input("Informe o novo e-mail", op.get_email())
+          senha = st.text_input("Informe a nova senha", op.get_senha(),
+              type="password")
+          if st.button("Atualizar"):
+              id = op.get_id()
+              try:
+                  id = op.get_id()
+                  View.proficional_atualizar(id, nome, especialidade, conselho, email, senha)
+                  st.success("Proficional atualizado com sucesso")
+              except ValueError as erro:
+                  st.error(erro)
+          time.sleep(2)
+          st.rerun()
