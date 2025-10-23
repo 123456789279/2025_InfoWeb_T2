@@ -46,9 +46,12 @@ class ManterProficionalUI:
       email = st.text_input("Novo email", op.get_email())
       senha = st.text_input("Nova senha", op.get_senha(), type="password")
       if st.button("Atualizar"):
-        id = op.get_id()
-        View.cliente_atualizar(id, nome, especialidade, conselho, email, senha)
-        st.success("Proficional atualizado com sucesso")
+        try:
+            id = op.get_id()
+            View.cliente_atualizar(id, nome, especialidade, conselho, email, senha)
+            st.success("Proficional atualizado com sucesso")
+        except ValueError as erro:
+            st.error(erro)
         time.sleep(2)
         st.rerun()
   def excluir():
