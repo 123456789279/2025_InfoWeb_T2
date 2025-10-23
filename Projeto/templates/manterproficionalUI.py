@@ -75,8 +75,11 @@ class ManterProficionalUI:
         op = st.selectbox("Atualização de Proficionais", proficionais)
         senha = st.text_input("Nova senha", op.get_senha(), type="password")
         if st.button("Alterar_Senha"):
-          id = op.get_id()
-          View.cliente_atualizar(id, senha)
-          st.success("Senha alterada com sucesso")
+          try:
+              id = op.get_id()
+              View.proficional_atualizar(id, senha)
+              st.success("Senha alterada com sucesso")
+          except ValueError as erro:
+              st.error(erro)
           time.sleep(2)
           st.rerun()
