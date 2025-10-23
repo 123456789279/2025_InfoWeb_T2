@@ -1,12 +1,12 @@
 from datetime import datetime
 class Horario:
    def __init__(self, id, data):
-      self.__set_id = id
-      self.__set_data = data
-      self.__set_confirmado = False
-      self.__set_id_cliente = 0
-      self.__set_id_servico = 0
-      self.__set_id_proficional =- 0
+      self.__id = id
+      self.__data = data
+      self.__confirmado = False
+      self.__id_cliente = 0
+      self.__id_servico = 0
+      self.__id_proficional =- 0
    def __str__(self):
      return f"{self.__id} - {self.__data.strftime('%d/%m/%Y %H:%M')} - {self.__confirmado}"
    def get_id(self): 

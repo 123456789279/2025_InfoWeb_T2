@@ -95,6 +95,10 @@ class View:
         ProficionalDAO.alterar_senha(proficional)   
 
     def horario_inserir(data, confirmado, cliente, servico, proficional):
+        # verifia se o proficional ja foi agendado
+        for obj in View.horario_listar():
+            if obj.get_proficional() == proficional:
+                raise ValueError("Proficional já agendado")
         horario = Horario(0, data, confirmado, cliente, servico, proficional)
         HorarioDAO.inserir(horario)
     def horario_listar():
