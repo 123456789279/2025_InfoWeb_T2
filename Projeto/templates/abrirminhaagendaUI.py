@@ -12,10 +12,13 @@ class AbrirMinhaAgendaUI:
           horario_final = st.datetime_input("Informe o horario final no formato HH:MM")
           intervalo = st.timedate_input("Informe o intervalo entre os horarios{min}")
           if st.button("Inserir"):
+            try:
               View.proficional_inserir(data, horario_inicio, horario_final, intervalo)
               st.success("agenda aberta com sucesso")
-              time.sleep(2)
-              st.rerun()
+            except ValueError as erro:
+              st.error(erro)
+            time.sleep(2)
+            st.rerun()
           View.abrirminhaagendaUI(datetime.strptime(horario_inicio, "%H:%M"), horario_inicio)
           View.abrirminhaagendaUI(datetime.strptime(horario_final, "%H:%M"), horario_final)
           View.abrirminhaagendaUI(datetime.strptime(intervalo, "%M"), intervalo)
