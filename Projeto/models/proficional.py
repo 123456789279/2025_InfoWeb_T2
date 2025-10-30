@@ -55,11 +55,6 @@ class ProficionalDAO(DAO):
           cls.salvar()
 
     @classmethod
-    def salvar(cls):
-        with open("proficional.json", mode="w") as arquivo:
-            json.dump(cls.__objetos, arquivo, default = Proficional.to_json)
-
-    @classmethod
     def abrir(cls):
         cls.__objetos = []
         try:
@@ -70,3 +65,8 @@ class ProficionalDAO(DAO):
                     cls.__objetos.append(obj)
         except FileNotFoundError:
             pass
+    
+    @classmethod
+    def salvar(cls):
+        with open("proficional.json", mode="w") as arquivo:
+            json.dump(cls.__objetos, arquivo, default = Proficional.to_json)

@@ -44,11 +44,6 @@ from models.dao import DAO
 
 class ClienteDAO(DAO):
     @classmethod
-    def salvar(cls):
-        with open("clientes.json", mode="w") as arquivo:
-            json.dump(cls.__objetos, arquivo, default = Cliente.to_json)
-
-    @classmethod
     def abrir(cls):
         cls.__objetos = []
         try:
@@ -58,4 +53,9 @@ class ClienteDAO(DAO):
                     obj = Cliente.from_json(dic)
                     cls.__objetos.append(obj)
         except FileNotFoundError:
-            pass        
+            pass 
+
+    @classmethod
+    def salvar(cls):
+        with open("clientes.json", mode="w") as arquivo:
+            json.dump(cls.__objetos, arquivo, default = Cliente.to_json)       
