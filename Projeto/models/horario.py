@@ -67,4 +67,4 @@ class HorarioDAO(DAO):
                     obj = Horario.from_json(dic)
                     cls.__objetos.append(obj)
         except FileNotFoundError:
-          pass
+            pass

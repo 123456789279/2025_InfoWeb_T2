@@ -48,25 +48,25 @@ from models.dao import DAO
 class ProficionalDAO(DAO):
     @classmethod
     def alterar_senha(cls, obj):
-      aux = cls.listar_id(obj.get_id())
-      if aux != None:
-        cls.__objetos.remove(aux)
-        cls.__objetos.append(obj)
-        cls.salvar()
+        aux = cls.listar_id(obj.get_id())
+        if aux != None:
+          cls.__objetos.remove(aux)
+          cls.__objetos.append(obj)
+          cls.salvar()
 
     @classmethod
     def salvar(cls):
-      with open("proficional.json", mode="w") as arquivo:
-        json.dump(cls.__objetos, arquivo, default = Proficional.to_json)
+        with open("proficional.json", mode="w") as arquivo:
+            json.dump(cls.__objetos, arquivo, default = Proficional.to_json)
 
     @classmethod
     def abrir(cls):
-      cls.__objetos = []
-      try:
-         with open("proficional.json", mode="r") as arquivo:
-           list_dic = json.load(arquivo)
-           for dic in list_dic:
-             obj = Proficional.from_json(dic)
-             cls.__objetos.append(obj)
-      except FileNotFoundError:
-         pass
+        cls.__objetos = []
+        try:
+            with open("proficional.json", mode="r") as arquivo:
+                list_dic = json.load(arquivo)
+                for dic in list_dic:
+                    obj = Proficional.from_json(dic)
+                    cls.__objetos.append(obj)
+        except FileNotFoundError:
+            pass
