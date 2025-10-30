@@ -43,8 +43,6 @@ import json
 from models.dao import DAO
 
 class ClienteDAO(DAO):
-    __objetos = []
-
     @classmethod
     def salvar(cls):
         with open("clientes.json", mode="w") as arquivo:
