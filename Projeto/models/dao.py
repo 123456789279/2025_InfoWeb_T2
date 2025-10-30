@@ -42,6 +42,11 @@ class DAO(ABC):
 
     @classmethod
     @abstractmethod
+    def alterar_senha(cls):
+        pass
+
+    @classmethod
+    @abstractmethod
     def abrir(cls):
         pass
 
