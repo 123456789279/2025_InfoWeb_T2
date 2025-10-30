@@ -17,3 +17,4 @@ class AbrirContaUI:
                   st.error(erro)
               time.sleep(2)
               st.rerun()
+          
