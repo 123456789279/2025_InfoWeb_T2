@@ -59,12 +59,12 @@ class HorarioDAO(DAO):
 
     @classmethod
     def abrir(cls):
-      cls.__objetos = []
-      try:
-        with open("horarios.json", mode ="r") as arquivo:
-          list_dic = json.load(arquivo)
-          for dic in list_dic:
-            obj = Horario.from_json(dic)
-            cls.__objetos.append(obj)
-      except FileNotFoundError:
-        pass
+        cls.__objetos = []
+        try:
+            with open("horarios.json", mode ="r") as arquivo:
+                list_dic = json.load(arquivo)
+                for dic in list_dic:
+                    obj = Horario.from_json(dic)
+                    cls.__objetos.append(obj)
+        except FileNotFoundError:
+          pass
