@@ -1,5 +1,6 @@
 import streamlit as st
 from views import View
+from models import servico
 import time
 class AgendarServicoUI:
     def main():
@@ -29,12 +30,13 @@ class AgendarServicoUI:
         if len(profs) == 0: st.write("Nenhum profissional solicitado")
         else:
             proficional = st.selectbox("Informe o proficional", profs)
+            proficionais = st.selectbox("Informe os proficionais", profs)
             horarios = View.horario_agendar_horario(proficional.get_id())
             if len(horarios) == 0: st.write("Nenhum horário disponível")
             else:
               horario = st.selectbox("Informe o horário", horarios)
               proficionais = View.proficional_listar()
-              proficional = st.selectbox("Informe o serviço", servicos)
+              proficional = st.selectbox("Informe o serviço", proficionais)
               if st.button("Agendar"):
                   View.horario_atualizar(horario.get_id(),
                       horario.get_data(), False,
