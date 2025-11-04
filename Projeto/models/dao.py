@@ -54,3 +54,7 @@ class DAO(ABC):
     @abstractmethod
     def salvar(cls):
         pass
+    @classmethod
+    @abstractmethod
+    def solicitar_proficional(cls):
+        pass

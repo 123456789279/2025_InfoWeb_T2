@@ -41,6 +41,7 @@ class Cliente:
 
 import json
 from models.dao import DAO
+from models import Proficional
 
 class ClienteDAO(DAO):
     @classmethod
@@ -58,4 +59,11 @@ class ClienteDAO(DAO):
     @classmethod
     def salvar(cls):
         with open("clientes.json", mode="w") as arquivo:
-            json.dump(cls.__objetos, arquivo, default = Cliente.to_json)       
+            json.dump(cls.__objetos, arquivo, default = Cliente.to_json)
+
+    @classmethod
+    def solicitar_proficional(cls):
+        cls.abrir()
+        for prof in cls._proficional:
+            if prof.get_id() == id: return prof
+        return None
