@@ -35,6 +35,9 @@ class View:
                 raise ValueError("Cliente já agendado: não é possível excluir")
         cliente = Cliente(id, "", "", "", "")
         ClienteDAO.excluir(cliente) 
+    def solicitar_proficional(id, nome, proficional):
+        cliente = Proficional(id, "", "")
+        AgendarServicoUI.solicitar_proficional(Proficional)
 
     def servico_inserir(descricao, valor): 
         # verifica se a descrição já existe
@@ -94,9 +97,6 @@ class View:
     def proficional_alterar_senha(id, senha):
         proficional = Proficional(id, senha)
         ProficionalDAO.alterar_senha(proficional)
-    def solicitar_proficional(id, nome, proficional):
-        proficional = Proficional(id, "", "")
-        AgendarServicoUI.solicitar_proficional(Proficional)
 
     def horario_inserir(data, confirmado, cliente, servico, proficional):
         # verifia se o proficional ja foi agendado
