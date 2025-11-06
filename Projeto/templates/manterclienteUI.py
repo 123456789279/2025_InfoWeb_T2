@@ -6,8 +6,7 @@ from views import View
 class ManterClienteUI:
   def main():
     st.header("Cadastro de Clientes")
-    tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir",
-      "Atualizar", "Excluir"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir", "Atualizar", "Excluir"])
     with tab1: ManterClienteUI.listar()
     with tab2: ManterClienteUI.inserir()
     with tab3: ManterClienteUI.atualizar()
@@ -27,7 +26,7 @@ class ManterClienteUI:
     senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
       try:
-          View.cliente_inserir(float(nome), email, float(fone), float(senha))
+          View.cliente_inserir(nome, email, fone, senha)
           st.success("Cliente inserido com sucesso")
       except ValueError as erro:
           st.error(erro)

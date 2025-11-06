@@ -28,7 +28,7 @@ class Cliente:
     def set_fone(self, fone): 
         self.__fone = fone
     def set_senha(self, senha):
-        if senha < 0: raise ValueError("senha inválida") 
+        if senha == "": raise ValueError("senha inválida") 
         self.__senha = senha
     def to_json(self):
         dic = {"id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone, "senha":self.__senha}
