@@ -2,7 +2,7 @@ from models.cliente import Cliente, ClienteDAO
 from models.servico import Servico, ServicoDAO
 from models.proficional import Proficional, ProficionalDAO
 from models.horario import Horario, HorarioDAO
-from templates import AgendarServicoUI
+from templates.agendarservicoUI import AgendarServicoUI
 
 import datetime
 
