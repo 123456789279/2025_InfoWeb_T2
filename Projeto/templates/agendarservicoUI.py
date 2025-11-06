@@ -41,7 +41,7 @@ class AgendarServicoUI:
                   View.horario_atualizar(horario.get_id(),
                       horario.get_data(), False,
                       st.session_state["usuario_id"],
-                      servico.get_id(), proficional.get_id())
+                      Servico.get_id(), proficional.get_id())
                   st.success("Horário agendado com sucesso")
                   time.sleep(2)
                   st.rerun()
