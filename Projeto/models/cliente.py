@@ -2,11 +2,11 @@ import json
 
 class Cliente:
     def __init__(self, id, nome, email, fone, senha):
-        self.__id = 0
-        self.__nome = ""
-        self.__email = ""
-        self.__fone = 0
-        self.__senha = 0
+        self.set_id(id)
+        self.set_nome(nome)
+        self.set_email(email)
+        self.set_fone(fone)
+        self.set_senha(senha)
     def get_id(self): 
         return self.__id
     def get_nome(self):
@@ -46,20 +46,20 @@ from models.proficional import Proficional
 class ClienteDAO(DAO):
     @classmethod
     def abrir(cls):
-        cls.__objetos = []
+        cls._objetos = []
         try:
             with open("clientes.json", mode="r") as arquivo:
                 list_dic = json.load(arquivo)
                 for dic in list_dic:
                     obj = Cliente.from_json(dic)
-                    cls.__objetos.append(obj)
+                    cls._objetos.append(obj)
         except FileNotFoundError:
             pass 
 
     @classmethod
     def salvar(cls):
         with open("clientes.json", mode="w") as arquivo:
-            json.dump(cls.__objetos, arquivo, default = Cliente.to_json)
+            json.dump(cls._objetos, arquivo, default = Cliente.to_json)
 
     @classmethod
     def solicitar_proficional(cls):
