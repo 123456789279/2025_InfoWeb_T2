@@ -2,7 +2,6 @@ from models.cliente import Cliente, ClienteDAO
 from models.servico import Servico, ServicoDAO
 from models.proficional import Proficional, ProficionalDAO
 from models.horario import Horario, HorarioDAO
-from templates.agendarservicoUI import AgendarServicoUI
 
 import datetime
 
@@ -37,7 +36,7 @@ class View:
         ClienteDAO.excluir(cliente) 
     def solicitar_proficional(id, nome, proficional):
         cliente = Proficional(id, "", "")
-        AgendarServicoUI.solicitar_proficional(Proficional)
+ #       AgendarServicoUI.solicitar_proficional(Proficional)
 
     def servico_inserir(descricao, valor): 
         # verifica se a descrição já existe
