@@ -41,7 +41,7 @@ class Cliente:
 
 import json
 from models.dao import DAO
-from models import Proficional
+from models.proficional import Proficional
 
 class ClienteDAO(DAO):
     @classmethod
