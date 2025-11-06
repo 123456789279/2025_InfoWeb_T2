@@ -1,8 +1,8 @@
 class Servico:
     def __init__(self, id, descricao, valor):
-        self.__id = id
-        self.__descricao = descricao
-        self.__valor = valor
+        self.set_id(id)
+        self.set_descricao(descricao)
+        self.set_valor(valor)
     def set_id(self, id):
         if id < 0: raise ValueError("ID inválido")
         self.__id = id
