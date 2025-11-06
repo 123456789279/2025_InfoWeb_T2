@@ -1,6 +1,6 @@
 import streamlit as st
 from views import View
-from models import servico
+from models.servico import Servico
 import time
 class AgendarServicoUI:
     def main():
