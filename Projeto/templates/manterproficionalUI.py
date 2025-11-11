@@ -73,6 +73,7 @@ class ManterProficionalUI:
       if len(proficionais) == 0: st.write("Nenhuma senha cadastrada")
       else:
         op = st.selectbox("Atualização de Proficionais", proficionais)
+        id = st.text_input("Novo id", op.get_id(), type="password")
         senha = st.text_input("Nova senha", op.get_senha(), type="password")
         if st.button("Alterar_Senha"):
           try:
