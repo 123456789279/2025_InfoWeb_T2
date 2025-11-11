@@ -79,7 +79,7 @@ class ManterProficionalUI:
           try:
               id = op.get_id()
               View.proficional_atualizar(id, senha)
-              st.success("Senha alterada com sucesso")
+              st.success("Senha e id alterados com sucesso")
           except ValueError as erro:
               st.error(erro)
           time.sleep(2)
