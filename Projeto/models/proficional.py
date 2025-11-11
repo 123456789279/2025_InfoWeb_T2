@@ -36,7 +36,7 @@ class Proficional:
         if senha < 0: raise ValueError("senha inválida")
         self.__senha = senha
     def to_json(self):
-        dic = {"id":self.__id, "nome":self.__nome,"especialidade":self.__especialidade, "conselho":self.__conselho, "email":self.__email, "senha":self.__senha}
+        dic = {"id":self.__id, "nome":self.__nome, "especialidade":self.__especialidade, "conselho":self.__conselho, "email":self.__email, "senha":self.__senha}
         return dic
     @staticmethod
     def from_json(dic):
@@ -46,13 +46,6 @@ import json
 from models.dao import DAO
 
 class ProficionalDAO(DAO):
-    @classmethod
-    def alterar_senha(cls, obj):
-        aux = cls.listar_id(obj.get_id())
-        if aux != None:
-          cls._objetos.remove(aux)
-          cls._objetos.append(obj)
-          cls.salvar()
 
     @classmethod
     def abrir(cls):

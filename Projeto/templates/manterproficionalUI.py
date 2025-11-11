@@ -5,12 +5,12 @@ from views import View
 class ManterProficionalUI:
   def main():
     st.header("Cadastro de Proficionais")
-    tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir",
-      "Atualizar", "Excluir"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Listar", "Inserir", "Atualizar", "Excluir", "Alterar_Senha"])
     with tab1: ManterProficionalUI.listar()
     with tab2: ManterProficionalUI.inserir()
     with tab3: ManterProficionalUI.atualizar()
     with tab4: ManterProficionalUI.excluir()
+    with tab5: ManterProficionalUI.alterar_senha()
   def listar():
     proficionais = View.proficional_listar()
     if len(proficionais) == 0: st.write("Nenhum proficional cadastrado")
@@ -28,15 +28,15 @@ class ManterProficionalUI:
     senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
       try:
-          View.cliente_inserir(float(id), float(nome), float(especialidade), float(conselho), email, float(senha))
+          View.proficional_inserir(id, nome, especialidade, conselho, email, senha)
           st.success("Proficionais inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
       time.sleep(2)
       st.rerun()
   def atualizar():
-    proficionais = View.cliente_listar()
-    if len(proficionais) == 0: st.write("Nenhum cliente cadastrado")
+    proficionais = View.proficional_listar()
+    if len(proficionais) == 0: st.write("Nenhum proficional cadastrado")
     else:
       op = st.selectbox("Atualização de Proficionais", proficionais)
       id = st.text_input("Novo id", op.get_id())
@@ -48,14 +48,14 @@ class ManterProficionalUI:
       if st.button("Atualizar"):
         try:
             id = op.get_id()
-            View.cliente_atualizar(id, nome, especialidade, conselho, email, senha)
+            View.proficional_atualizar(id, nome, especialidade, conselho, email, senha)
             st.success("Proficional atualizado com sucesso")
         except ValueError as erro:
             st.error(erro)
         time.sleep(2)
         st.rerun()
   def excluir():
-    proficionais = View.cliente_listar()
+    proficionais = View.proficional_listar()
     if len(proficionais) == 0: st.write("Nenhum proficional cadastrado")
     else:
       op = st.selectbox("Exclusão de Proficionais", proficionais)

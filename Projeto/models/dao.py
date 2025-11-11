@@ -34,16 +34,19 @@ class DAO(ABC):
             cls.salvar()
 
     @classmethod
+    def alterar_senha(cls, obj):
+        aux = cls.listar_id(obj.get_id())
+        if aux != None:
+          cls._objetos.remove(aux)
+          cls._objetos.append(obj)
+          cls.salvar()
+
+    @classmethod
     def excluir(cls, obj):
         aux = cls.listar_id(obj.get_id())
         if aux != None:
             cls._objetos.remove(aux)
             cls.salvar()
-
-    @classmethod
-    @abstractmethod
-    def alterar_senha(cls):
-        pass
 
     @classmethod
     @abstractmethod
@@ -54,6 +57,7 @@ class DAO(ABC):
     @abstractmethod
     def salvar(cls):
         pass
+
     @classmethod
     @abstractmethod
     def solicitar_proficional(cls):

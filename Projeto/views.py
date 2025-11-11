@@ -103,6 +103,10 @@ class View:
         proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)
     def proficional_alterar_senha(id, senha):
+        # verifica se a senha já existe em outro serviço
+        for obj in View.proficional_listar():
+            if obj.get_id() != id and obj.get_senha() == senha:
+                raise ValueError("Senha já cadastrado em outro proficional")
         proficional = Proficional(id, senha)
         ProficionalDAO.alterar_senha(proficional)
 
