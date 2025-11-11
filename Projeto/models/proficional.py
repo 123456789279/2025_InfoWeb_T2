@@ -46,7 +46,6 @@ import json
 from models.dao import DAO
 
 class ProficionalDAO(DAO):
-
     @classmethod
     def abrir(cls):
         cls._objetos = []

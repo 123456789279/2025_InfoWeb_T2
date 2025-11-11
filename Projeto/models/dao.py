@@ -36,8 +36,10 @@ class DAO(ABC):
     @classmethod
     def alterar_senha(cls, obj):
         aux = cls.listar_id(obj.get_id())
-        if aux != None:
+        aux2 = cls.listar_senha(obj.get_senha())
+        if aux != None and aux2 != None:
           cls._objetos.remove(aux)
+          cls._objetos.remove(aux2)
           cls._objetos.append(obj)
           cls.salvar()
 
