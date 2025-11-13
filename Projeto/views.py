@@ -75,12 +75,12 @@ class View:
         servico = Servico(id, "sem descricao", 0)
         ServicoDAO.excluir(servico)   
 
-    def proficional_inserir(nome, especialidade, conselho, email, senha):
+    def proficional_inserir(id, nome, especialidade, conselho, email, senha):
         # verifia se o email ja existe
         for obj in View.proficional_listar():
             if obj.get_email() == email:
                 raise ValueError("Proficional já cadastrado")
-        proficional = Proficional(0, nome, especialidade, conselho, email, senha)
+        proficional = Proficional(0, id, nome, especialidade, conselho, email, senha)
         ProficionalDAO.inserir(proficional)
     def proficional_listar():
         r = ProficionalDAO.listar()
