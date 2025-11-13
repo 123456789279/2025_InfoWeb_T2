@@ -10,7 +10,7 @@ class Servico:
         if descricao == "": raise ValueError("Descrição inválida")
         self.__descricao = descricao
     def set_valor(self, valor):
-        if valor < 0: raise ValueError("Valor inválido")
+        if valor == 0: raise ValueError("Valor inválido")
         self.__valor = valor
     def get_id(self):
         return self.__id
