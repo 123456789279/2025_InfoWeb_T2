@@ -103,11 +103,11 @@ class View:
         proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)
     def proficional_alterar_senha(id, nova_senha):
-    proficional = Proficional.listar_id(id)  # ou como você busca pelo id
-    if proficional is None:
-        raise ValueError("Profissional não encontrado")
-    proficional.set_senha(senha)
-    ProficionalDAO.atualizar(proficional)  # salva a alteração
+        proficional = Proficional.listar_id(id)  # ou como você busca pelo id
+        if proficional is None:
+            raise ValueError("Profissional não encontrado")
+        proficional.set_senha(nova_senha)
+        ProficionalDAO.atualizar(proficional)  # salva a alteração
 
     def horario_inserir(data, confirmado, cliente, servico, proficional):
         # verifia se o proficional ja foi agendado
