@@ -98,7 +98,7 @@ class View:
     def proficional_excluir(id):
         # verifica se o proficional já foi agendado alguma vez
         for obj in View.proficional_listar():
-            if obj.get_id_proficional() == id:
+            if obj.get_id() == id:
                 raise ValueError("Proficionaljá agendado: não é possível excluir")
         proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)
