@@ -124,7 +124,7 @@ class View:
         return HorarioDAO.listar_id(id)
     def horario_atualizar(id, data, confirmado, cliente, servico, proficional):
         # verifica se o proficional já foi agendado em outro lugar
-        for obj in View.proficional_listar():
+        for obj in View.horario_listar():
             if obj.get_id() != id and obj.get_proficional() == proficional:
                 raise ValueError("Proficional já agendado em outro lugar")
         horario = Horario(id, data, confirmado, cliente, servico, proficional)
