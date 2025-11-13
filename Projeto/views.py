@@ -103,7 +103,7 @@ class View:
         proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)
     def proficional_alterar_senha(id, nova_senha):
-        proficional = Proficional.listar_id(id)  # ou como você busca pelo id
+        proficional = Proficional.set_id(id)  # ou como você busca pelo id
         if proficional is None:
             raise ValueError("Profissional não encontrado")
         proficional.set_senha(nova_senha)
