@@ -69,18 +69,18 @@ class ManterProficionalUI:
         time.sleep(2)
         st.rerun()
   def alterar_senha():
-      proficionais = View.proficional_alterar_senha()
-      if len(proficionais) == 0: st.write("Nenhuma senha cadastrada")
-      else:
-        op = st.selectbox("Atualização de Proficionais", proficionais)
-        id = st.text_input("Novo id", op.get_id(), type="password")
-        senha = st.text_input("Nova senha", op.get_senha(), type="password")
-        if st.button("Alterar_Senha"):
-          try:
-              id = op.get_id()
-              View.proficional_atualizar(id, senha)
-              st.success("Senha e id alterados com sucesso")
-          except ValueError as erro:
-              st.error(erro)
-          time.sleep(2)
-          st.rerun()
+    proficionais = View.proficional_listar()  # <- listar, não alterar
+    if len(proficionais) == 0:
+        st.write("Nenhum profissional cadastrado")
+    else:
+        op = st.selectbox("Atualização de Profissionais", proficionais)
+        id = st.text_input("ID do profissional", op.get_id())
+        senha = st.text_input("Nova senha", type="password")
+        if st.button("Alterar senha"):
+            try:
+                View.proficional_alterar_senha(id, senha)  # <- agora sim com parâmetros
+                st.success("Senha alterada com sucesso")
+            except ValueError as erro:
+                st.error(erro)
+            time.sleep(2)
+            st.rerun()
