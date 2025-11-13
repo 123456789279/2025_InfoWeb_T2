@@ -33,7 +33,7 @@ class Proficional:
         if email == "": raise ValueError("E-mail inválido")
         self.__email= email
     def set_senha(self, senha):
-        if senha < 0: raise ValueError("senha inválida")
+        if senha == 0: raise ValueError("senha inválida")
         self.__senha = senha
     def to_json(self):
         dic = {"id":self.__id, "nome":self.__nome, "especialidade":self.__especialidade, "conselho":self.__conselho, "email":self.__email, "senha":self.__senha}
