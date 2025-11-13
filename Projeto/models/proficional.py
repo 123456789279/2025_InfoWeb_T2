@@ -7,36 +7,36 @@ class Proficional:
         self.set_email(email)
         self.set_senha(senha)
     def __str__(self):
-        return f"{self.__id}-{self.__nome}-{self.__especialidade}-{self.__conselho}"
+        return f"{self._id}-{self._nome}-{self._especialidade}-{self._conselho}"
     def get_id(self):
-        return self.__id
+        return self._id
     def get_nome(self):
-        return self.__nome
+        return self._nome
     def get_especialidade(self):
-        return self.__especialidade 
+        return self._especialidade 
     def get_conselho(self):
-        return self.__conselho
+        return self._conselho
     def get_email(self):
-        return self.__email
+        return self._email
     def get_senha(self):
-        return self.__senha
+        return self._senha
     def set_id(self, id):
-        self.__id = id
+        self._id = id
     def set_nome(self, nome):
         if nome == "": raise ValueError("Nome inválido")
-        self.__nome = nome
+        self._nome = nome
     def set_especialidade(self, especialidade):
-        self.__especialidade = especialidade
+        self._especialidade = especialidade
     def set_conselho(self, conselho):
-        self.__conselho = conselho
+        self._conselho = conselho
     def set_email(self, email):
         if email == "": raise ValueError("E-mail inválido")
-        self.__email= email
+        self._email= email
     def set_senha(self, senha):
         if senha == 0: raise ValueError("senha inválida")
-        self.__senha = senha
+        self._senha = senha
     def to_json(self):
-        dic = {"id":self.__id, "nome":self.__nome, "especialidade":self.__especialidade, "conselho":self.__conselho, "email":self.__email, "senha":self.__senha}
+        dic = {"id":self._id, "nome":self._nome, "especialidade":self._especialidade, "conselho":self._conselho, "email":self._email, "senha":self._senha}
         return dic
     @staticmethod
     def from_json(dic):
