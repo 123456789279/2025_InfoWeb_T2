@@ -6,7 +6,7 @@ import time
 class AgendarServicoUI:
     def main():
         st.header("Agendar Serviço")
-        profs = View.profissional_listar()
+        profs = View.proficional_listar()
         if len(profs) == 0: st.write("Nenhum profissional cadastrado")
         else:
             proficional = st.selectbox("Informe o proficional", profs)
