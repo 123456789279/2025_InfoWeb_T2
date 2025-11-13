@@ -62,3 +62,14 @@ class ProficionalDAO(DAO):
     def salvar(cls):
         with open("proficional.json", mode="w") as arquivo:
             json.dump(cls._objetos, arquivo, default = Proficional.to_json)
+
+    @classmethod
+    def alterar_senha(cls, obj):
+        aux = cls.listar_id(obj.get_id())
+        aux2 = cls.listar_senha(obj.get_senha())
+        if aux != None and aux2 != None:
+          cls._objetos.remove(aux)
+          cls._objetos.remove(aux2)
+          cls._objetos.append(obj)
+          cls.salvar()
+
