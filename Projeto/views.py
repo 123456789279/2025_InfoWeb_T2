@@ -102,13 +102,12 @@ class View:
                 raise ValueError("Proficionaljá agendado: não é possível excluir")
         proficional = Proficional(id, "", "", "", "", "")
         ProficionalDAO.excluir(proficional)
-    def proficional_alterar_senha(id, senha):
-        # verifica se a senha já existe em outro serviço
-        for obj in View.proficional_listar():
-            if obj.get_id() != id and obj.get_senha() == senha:
-                raise ValueError("Senha já cadastrado em outro proficional")
-        proficional = Proficional(id, senha)
-        ProficionalDAO.alterar_senha(proficional)
+    def proficional_alterar_senha(id, nova_senha):
+    proficional = Proficional.listar_id(id)  # ou como você busca pelo id
+    if proficional is None:
+        raise ValueError("Profissional não encontrado")
+    proficional.set_senha(senha)
+    ProficionalDAO.atualizar(proficional)  # salva a alteração
 
     def horario_inserir(data, confirmado, cliente, servico, proficional):
         # verifia se o proficional ja foi agendado
