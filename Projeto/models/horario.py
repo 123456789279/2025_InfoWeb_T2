@@ -42,7 +42,7 @@ class Horario:
      return dic
    @staticmethod
    def from_json(dic):
-     horario = Horario(dic["id"], datetime.strptime(dic["data"], "%d/%m/%Y %H:%M"))
+     horario = Horario(dic["id"], datetime.strptime(dic["data"], "%d/%m/%Y %H:%M"), dic["confirmado"], dic["id_cliente"], dic["id_servico"], dic["id_proficional"])
      horario.set_confirmado(dic["confirmado"])
      horario.set_id_cliente(dic["id_cliente"])
      horario.set_id_servico(dic["id_servico"])
