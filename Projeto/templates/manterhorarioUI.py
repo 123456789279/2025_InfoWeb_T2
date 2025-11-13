@@ -36,20 +36,17 @@ class ManterHorarioUI:
      servico = st.selectbox("Informe o serviço", servicos, index = None)
      proficional = st.selectbox("Informe o proficional", proficional, index = None)
      if st.button("Inserir"):
-      try:
-          View.horario_inserir(datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_cliente, id_servico, id_proficional)
-          st.success("Horário inserido com sucesso")
-      except ValueError as erro:
-          st.error(erro)
       if cliente != None: 
          id_cliente= cliente.get_id()
       if servico != None: 
          id_servico = servico.get_id()
       if proficional != None: 
          id_proficional = proficional.get_id()
-      id_cliente = None
-      id_servico = None
-      id_proficional = None
+      try:
+          View.horario_inserir(datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_cliente, id_servico, id_proficional)
+          st.success("Horário inserido com sucesso")
+      except ValueError as erro:
+          st.error(erro)
       time.sleep(2)
       st.rerun()
    def atualizar():
