@@ -138,7 +138,7 @@ class View:
         HorarioDAO.excluir(horario) 
     def horario_agendar_horario(id_proficional):
         r = []
-        agora = datetime.now()
+        agora = datetime.datetime.now()
         for h in View.horario_listar():
             if h.get_data() >= agora and h.get_confirmado() == False and h.get_id_cliente() == None and h.get_id_proficional() == id_proficional:
                 r.append(h)
