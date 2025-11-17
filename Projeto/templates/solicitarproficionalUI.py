@@ -6,7 +6,7 @@ import time
 class SolicitarProficionalUI:
     def main():
         st.header("Solicitar Profissional")
-        profs = View.profissional_listar()
+        profs = View.proficional_listar()
         if len(profs) == 0: st.write("Nenhum profissional solicitado")
         else:
             proficional = st.selectbox("Informe o proficional", profs)
