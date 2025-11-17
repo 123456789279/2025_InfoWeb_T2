@@ -4,7 +4,7 @@ from models.servico import Servico
 import time
 
 class SolicitarProficionalUI:
-    def solicitar_proficional():
+    def main():
         st.header("Solicitar Profissional")
         profs = View.profissional_listar()
         if len(profs) == 0: st.write("Nenhum profissional solicitado")
