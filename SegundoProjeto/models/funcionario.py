@@ -38,3 +38,24 @@ class Funcionario:
         return Funcionario(dic["id"], dic["nome"], dic["email"], dic["fone"], dic["senha"])
     def __str__(self):
         return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone} - {self.__senha}"
+    
+import json
+from models.dao import DAO
+
+class ClienteDAO(DAO):
+    @classmethod
+    def abrir(cls):
+        cls._objetos = []
+        try:
+            with open("clientes.json", mode="r") as arquivo:
+                list_dic = json.load(arquivo)
+                for dic in list_dic:
+                    obj = Funcionario.from_json(dic)
+                    cls._objetos.append(obj)
+        except FileNotFoundError:
+            pass 
+
+    @classmethod
+    def salvar(cls):
+        with open("clientes.json", mode="w") as arquivo:
+            json.dump(cls._objetos, arquivo, default = Funcionario.to_json)
