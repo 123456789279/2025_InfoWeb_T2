@@ -12,11 +12,11 @@ class ManterFuncionarioUI:
     with tab3: ManterFuncionarioUI.atualizar()
     with tab4: ManterFuncionarioUI.excluir()
   def listar():
-    clientes = View.funcionario_listar()
-    if len(clientes) == 0: st.write("Nenhum funcionario solicitou seguro desemprego")
+    funcionarios = View.funcionario_listar()
+    if len(funcionarios) == 0: st.write("Nenhum funcionario solicitou seguro desemprego")
     else:
       list_dic = []
-      for obj in clientes: list_dic.append(obj.to_json())
+      for obj in funcionarios: list_dic.append(obj.to_json())
       df = pd.DataFrame(list_dic)
       st.dataframe(df)
   def inserir():
@@ -27,16 +27,16 @@ class ManterFuncionarioUI:
     if st.button("Inserir"):
       try:
           View.cliente_inserir(nome, email, fone, senha)
-          st.success("pedido do Funcionario solicitado com sucesso")
+          st.success("Funcionario inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
       time.sleep(2)
       st.rerun()
   def atualizar():
-    clientes = View.funcionario_listar()
-    if len(clientes) == 0: st.write("Nenhum Funcionario fez solicitação")
+    funcionarios = View.funcionario_listar()
+    if len(funcionarios) == 0: st.write("Nenhum Funcionario fez solicitação")
     else:
-      op = st.selectbox("Atualização de Clientes", clientes)
+      op = st.selectbox("Atualização de Funcionarios", funcionarios)
       nome = st.text_input("Novo nome", op.get_nome())
       email = st.text_input("Novo e-mail", op.get_email())
       fone = st.text_input("Novo fone", op.get_fone())
@@ -44,22 +44,22 @@ class ManterFuncionarioUI:
       if st.button("Atualizar"):
         try:
             id = op.get_id()
-            View.cliente_atualizar(id, nome, email, fone, senha)
-            st.success("Cliente atualizado com sucesso")
+            View.funcionario_atualizar(id, nome, email, fone, senha)
+            st.success("Funcionario atualizado com sucesso")
         except ValueError as erro:
             st.error(erro)
         time.sleep(2)
         st.rerun()
   def excluir():
-    clientes = View.cliente_listar()
-    if len(clientes) == 0: st.write("Nenhum cliente cadastrado")
+    funcionarios = View.funcionario_listar()
+    if len(funcionarios) == 0: st.write("Nenhum funcionario cadastrado")
     else:
-      op = st.selectbox("Exclusão de Clientes", clientes)
+      op = st.selectbox("Exclusão de Funcionarios", funcionarios)
       if st.button("Excluir"):
         try:
             id = op.get_id()
-            View.cliente_excluir(id)
-            st.success("Cliente excluído com sucesso")
+            View.funcionario_excluir(id)
+            st.success("Funcionario excluído com sucesso")
         except ValueError as erro:
             st.error(erro)
         time.sleep(2)
