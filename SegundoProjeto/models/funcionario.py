@@ -42,7 +42,7 @@ class Funcionario:
 import json
 from models.dao import DAO
 
-class ClienteDAO(DAO):
+class FuncionarioDAO(DAO):
     @classmethod
     def abrir(cls):
         cls._objetos = []
