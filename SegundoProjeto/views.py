@@ -67,7 +67,7 @@ class View:
         # verifica se o empregador já foi agendado alguma vez
         for obj in View.empregador_listar():
             if obj.get_id() == id:
-                raise ValueError("Proficional já agendado: não é possível excluir")
+                raise ValueError("Empregador já agendado: não é possível excluir")
         empregador = Empregador(id, "", "", "")
         EmpregadorDAO.excluir(empregador)
     def empregador_alterar_senha(id, nova_senha):
@@ -77,38 +77,38 @@ class View:
         empregador.set_senha(nova_senha)
         EmpregadorDAO.atualizar(empregador)  # salva a alteração
 
-    def horario_inserir(data, confirmado, cliente, servico, proficional):
-        # verifia se o proficional ja foi agendado
-        for obj in View.horario_listar():
-            if obj.get_proficional() == proficional:
-                raise ValueError("Proficional já agendado")
-        horario = Horario(0, data, confirmado, cliente, servico, proficional)
-        HorarioDAO.inserir(horario)
-    def horario_listar():
-        r = HorarioDAO.listar()
+    def agendamento_inserir(data, confirmado, funcionario):
+        # verifia se o funcionario ja foi agendado
+        for obj in View.agendamento_listar():
+            if obj.get_funcionario() == funcionario:
+                raise ValueError("Funcionario já agendado")
+        agendamento = Agendamento(0, data, confirmado, funcionario)
+        AgendamentoDAO.inserir(agendamento)
+    def agendamento_listar():
+        r = AgendamentoDAO.listar()
         r.sort(key = lambda obj : obj.get_data())
         return r
-    def horario_listar_id(id):
-        return HorarioDAO.listar_id(id)
-    def horario_atualizar(id, data, confirmado, cliente, servico, proficional):
-        # verifica se o proficional já foi agendado em outro lugar
+    def agendamento_listar_id(id):
+        return AgendamentoDAO.listar_id(id)
+    def agendamento_atualizar(id, data, confirmado, funcionario):
+        # verifica se o funcionario já foi agendado em outro lugar
         for obj in View._listar():
-            if obj.get_id() != id and obj.get_proficional() == proficional:
-                raise ValueError("Proficional já agendado em outro lugar")
-        horario = Horario(id, data, confirmado, cliente, servico, proficional)
-        HorarioDAO.atualizar(horario)
-    def horario_excluir(id):
+            if obj.get_id() != id and obj.get_funcionario() == funcionario:
+                raise ValueError("Funcionario já agendado em outro lugar")
+        agendamento = Agendamento(id, data, confirmado, funcionario)
+        AgendamentoDAO.atualizar(agendamento)
+    def agendamento_excluir(id):
         # verifica se o cliente já foi agendado alguma vez
         for obj in View.cliente_listar():
             if obj.get_id_cliente() == id:
                 raise ValueError("Cliente já agendado: não é possível excluir")
-        horario = Proficional(id, "", "", "", "", "")
-        HorarioDAO.excluir(horario) 
-    def horario_agendar_horario(id_proficional):
+        agendamento = Funcionario(id, "", "", "", "", "")
+        AgendamentoDAO.excluir(agendamento) 
+    def agendamento_agendar_agendamentoo(id_funcionario):
         r = []
         agora = datetime.datetime.now()
-        for h in View.horario_listar():
-            if h.get_data() >= agora and h.get_confirmado() == False and h.get_id_cliente() == None and h.get_id_proficional() == id_proficional:
+        for h in View.agendamento_listar():
+            if h.get_data() >= agora and h.get_confirmado() == False and h.get_id_empregador() == None and h.get_id_funcionario() == id_funcionario:
                 r.append(h)
         r.sort(key = lambda h : h.get_data())
         return r
