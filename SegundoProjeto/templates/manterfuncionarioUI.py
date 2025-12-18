@@ -23,10 +23,11 @@ class ManterFuncionarioUI:
     nome = st.text_input("Informe o nome")
     email = st.text_input("Informe o e-mail")
     fone = st.text_input("Informe o fone")
+    cpf = st.text_input("Informe o cpf")
     senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
       try:
-          View.cliente_inserir(nome, email, fone, senha)
+          View.cliente_inserir(nome, email, fone, senha, cpf)
           st.success("Funcionario inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
@@ -40,11 +41,12 @@ class ManterFuncionarioUI:
       nome = st.text_input("Novo nome", op.get_nome())
       email = st.text_input("Novo e-mail", op.get_email())
       fone = st.text_input("Novo fone", op.get_fone())
+      cpf = st.text_input("Novo cpf", op.get_cpf())
       senha = st.text_input("Nova senha", op.get_senha(), type="password")
       if st.button("Atualizar"):
         try:
             id = op.get_id()
-            View.funcionario_atualizar(id, nome, email, fone, senha)
+            View.funcionario_atualizar(id, nome, email, fone, senha, cpf)
             st.success("Funcionario atualizado com sucesso")
         except ValueError as erro:
             st.error(erro)
