@@ -7,7 +7,7 @@ conexao = db.get_conexao()
 
 
 # Repositórios
-trab_repo = TrabalhadorRepository(conexao)
+trab_repo = FuncionarioRepository(conexao)
 agend_repo = AgendamentoRepository(conexao)
 
 
