@@ -15,6 +15,8 @@ def criar_tabelas(self):
         nome TEXT NOT NULL,
         cpf TEXT NOT NULL,
         email TEXT NOT NULL
+        fone TEXT NOT NULL
+        senha TEXT NOT NULL
         )
         """)
     cursor.execute(""" CREATE TABLE IF NOT EXISTS agendamento (
