@@ -23,3 +23,4 @@ class TrabalhadorRepository:
               email=resultado[3]
               )
             return None
+        
