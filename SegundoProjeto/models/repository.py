@@ -1,6 +1,6 @@
-from model import Trabalhador, Agendamento
+from models import Funcionario, Agendamento
 
-class TrabalhadorRepository:
+class FuncionarioRepository:
     def __init__(self, conexao):
         self.conexao = conexao
     def salvar(self, trabalhador):
@@ -16,7 +16,7 @@ class TrabalhadorRepository:
         "SELECT id, nome, cpf, email FROM trabalhador WHERE id = ?", (id,))
         resultado = cursor.fetchone()
         if resultado:
-            return Trabalhador(
+            return Funcionario(
               id=resultado[0],
               nome=resultado[1],
               cpf=resultado[2],
