@@ -6,9 +6,8 @@ class FuncionarioRepository:
     def salvar(self, trabalhador):
         cursor = self.conexao.cursor()
         cursor.execute(
-        "INSERT INTO trabalhador (id, nome, cpf, email, fone, senha) VALUES (?, ?, ?)",
-        (trabalhador.nome, trabalhador.cpf, trabalhador.email)
-        )
+        "INSERT INTO trabalhador (id, nome, cpf, email, fone, senha) VALUES (?, ?, ?, ?, ?, ?)",
+        (trabalhador.nome, trabalhador.cpf, trabalhador.email))
     self.conexao.commit()
     def buscar_por_id(self, id):
         cursor = self.conexao.cursor()
