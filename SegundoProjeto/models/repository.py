@@ -1,4 +1,4 @@
-from models import Funcionario, Agendamento
+from models.funcionario import Funcionario
 
 class FuncionarioRepository:
     def __init__(self, conexao):
@@ -6,7 +6,7 @@ class FuncionarioRepository:
     def salvar(self, trabalhador):
         cursor = self.conexao.cursor()
         cursor.execute(
-        "INSERT INTO trabalhador (nome, cpf, email) VALUES (?, ?, ?)",
+        "INSERT INTO trabalhador (id, nome, cpf, email, fone, senha) VALUES (?, ?, ?)",
         (trabalhador.nome, trabalhador.cpf, trabalhador.email)
         )
     self.conexao.commit()

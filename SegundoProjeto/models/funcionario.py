@@ -1,12 +1,13 @@
 import json
 
 class Funcionario:
-    def __init__(self, id, nome, email, fone, senha):
+    def __init__(self, id, nome, email, fone, senha, cpf):
         self.set_id(id)
         self.set_nome(nome)
         self.set_email(email)
         self.set_fone(fone)
         self.set_senha(senha)
+        self.set_cpf(cpf)
     def get_id(self): 
         return self.__id
     def get_nome(self):
@@ -17,6 +18,8 @@ class Funcionario:
         return self.__fone
     def get_senha(self): 
         return self.__senha
+    def get_cpf(self): 
+        return self.__cpf
     def set_id(self, id): 
         self.__id = id
     def set_nome(self, nome):
@@ -30,14 +33,17 @@ class Funcionario:
     def set_senha(self, senha):
         if senha == "": raise ValueError("senha inválida") 
         self.__senha = senha
+    def set_cpf(self, cpf):
+        if cpf == "": raise ValueError("cpf inválido") 
+        self.__cpf = cpf
     def to_json(self):
-        dic = {"id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone, "senha":self.__senha}
+        dic = {"id":self.__id, "nome":self.__nome, "email":self.__email, "fone":self.__fone, "senha":self.__senha, "cpf":self.__cpf}
         return dic  
     @staticmethod
     def from_json(dic):
-        return Funcionario(dic["id"], dic["nome"], dic["email"], dic["fone"], dic["senha"])
+        return Funcionario(dic["id"], dic["nome"], dic["email"], dic["fone"], dic["senha"], dic["cpf"])
     def __str__(self):
-        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone} - {self.__senha}"
+        return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone} - {self.__senha} - {self.__cpf}"
     
 import json
 from models.dao import DAO
