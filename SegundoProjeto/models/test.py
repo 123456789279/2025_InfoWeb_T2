@@ -1,5 +1,5 @@
 from database import Database
-from models import Funcionario, Agendamento
+from models.funcionario import Funcionario
 
 # Criar banco e conexão
 db = Database()
@@ -11,17 +11,17 @@ trab_repo = FuncionarioRepository(conexao)
 agend_repo = AgendamentoRepository(conexao)
 
 
-# Criar trabalhador
-trabalhador = Trabalhador(
+# Criar funcionario)
+funcionario= Funcionario(
 nome="Maria Silva",
 cpf="123.456.789-00",
 email="maria@email.com"
 )
 
 
-# Salvar trabalhador
-trabalhador_salvo = trab_repo.salvar(trabalhador)
-print("Trabalhador salvo:", trabalhador_salvo)
+# Salvar funcionario
+funcionario_salvo = trab_repo.salvar(funcionario)
+print("Trabalhador salvo:", funcionario_salvo)
 
 
 # Criar agendamento
@@ -29,8 +29,7 @@ agendamento = Agendamento(
 data="2025-03-20",
 horario="09:30",
 local="Posto do Trabalho - Centro",
-trabalhador_id=trabalhador_salvo.id
-)
+funcionario_id=funcionario_salvo.id)
 
 
 # Salvar agendamento
