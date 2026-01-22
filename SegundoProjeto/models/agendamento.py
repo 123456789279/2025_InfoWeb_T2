@@ -1,6 +1,6 @@
 from datetime import datetime
 
-class Horario:
+class :
    def __init__(self, id, data, confirmado, id_funcionario):
       self.set_id(id)
       self.set_data(data)
@@ -31,10 +31,10 @@ class Horario:
      return dic
    @staticmethod
    def from_json(dic):
-     horario = Horario(dic["id"], datetime.strptime(dic["data"], "%d/%m/%Y %H:%M"), dic["confirmado"], dic["id_funcionario"])
-     horario.set_confirmado(dic["confirmado"])
-     horario.set_id_funcionario(dic["id_funcionario"])
-     return horario
+     agendamento = Agendamento(dic["id"], datetime.strptime(dic["data"], "%d/%m/%Y %H:%M"), dic["confirmado"], dic["id_funcionario"])
+     agendamento.set_confirmado(dic["confirmado"])
+     agendamento.set_id_funcionario(dic["id_funcionario"])
+     return agendamento
    
 import json
 from models.dao import DAO
@@ -44,15 +44,15 @@ class AgendamentoDAO(DAO):
     def abrir(cls):
         cls._objetos = []
         try:
-            with open("horarios.json", mode ="r") as arquivo:
+            with open("agendamentos.json", mode ="r") as arquivo:
                 list_dic = json.load(arquivo)
                 for dic in list_dic:
-                    obj = Horario.from_json(dic)
+                    obj = Agendamento.from_json(dic)
                     cls._objetos.append(obj)
         except FileNotFoundError:
             pass
     
     @classmethod
     def salvar(cls):
-        with open("horarios.json", mode ="w") as arquivo:
-            json.dump(cls._objetos, arquivo, default = Horario.to_json)
+        with open("agendamentos.json", mode ="w") as arquivo:
+            json.dump(cls._objetos, arquivo, default = Agendamento.to_json)
