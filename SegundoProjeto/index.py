@@ -4,9 +4,7 @@ from templates.manteragendamentoUI import ManterAgendamentoUI
 
 from templates.abrircontaUI import AbrirContaUI
 from templates.loginUI import LoginUI
-from templates.perfilclienteUI import PerfilClienteUI
-from templates.agendarservicoUI import AgendarServicoUI
-from templates.solicitarproficionalUI import SolicitarProficionalUI
+from templates.perfilfuncionarioUI import PerfilFuncionarioUI
 from views import View
 
 import streamlit as st
