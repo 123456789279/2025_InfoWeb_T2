@@ -43,7 +43,7 @@ class ManterAgendamentoUI:
      if len(agendamentos) == 0: st.write("Nenhum agendamento cadastrado")
      else:
        funcionarios = View.funcionario_listar()
-       op = st.selectbox("Atualização de Horários", agendamentos)
+       op = st.selectbox("Atualização de Agendamento", agendamentos)
        data = st.text_input("Informe a nova data e horário do serviço", op.get_data().strftime("%d/%m/%Y %H:%M"))
        confirmado = st.checkbox("Nova confirmação", op.get_confirmado())
        id_funcionario = None if op.get_id_funcionario() in [0, None] else op.get_id_funcionario()
@@ -62,9 +62,9 @@ class ManterAgendamentoUI:
         st.rerun()
    def excluir():
      agendamentos = View.agendamento_listar()
-     if len(agendamentos) == 0: st.write("Nenhum horário cadastrado")
+     if len(agendamentos) == 0: st.write("Nenhum agendamento cadastrado")
      else:
-       op = st.selectbox("Exclusão de Horários", agendamentos)
+       op = st.selectbox("Exclusão de Agendamentos", agendamentos)
        if st.button("Excluir"):
         try:
             id = op.get_id()
