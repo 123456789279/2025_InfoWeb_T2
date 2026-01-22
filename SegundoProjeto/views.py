@@ -6,7 +6,7 @@ import datetime
 
 class View:
 
-    def funcionario_inserir(nome, email, fone, senha):
+    def funcionario_inserir(nome, email, fone, senha, cpf):
         # verifia se o email ja existe
         for obj in View.funcionario_listar():
             if obj.get_email() == email:
