@@ -39,7 +39,7 @@ class Horario:
 import json
 from models.dao import DAO
 
-class HorarioDAO(DAO):
+class AgendamentoDAO(DAO):
     @classmethod
     def abrir(cls):
         cls._objetos = []
