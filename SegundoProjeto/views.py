@@ -33,7 +33,7 @@ class View:
                 raise ValueError("Funcionario já agendado: não é possível excluir")
         funcionario = Funcionario(id, "", "", "", "")
         FuncionarioDAO.excluir(funcionario) 
-    def Funcionario_criar_admin():
+    def funcionario_criar_admin():
         for c in View.funcionario_listar():
             if c.get_email() == "admin": return
         View.funcionario_inserir("admin", "admin", "fone", "1234")
