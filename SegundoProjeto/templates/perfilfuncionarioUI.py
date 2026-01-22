@@ -9,9 +9,8 @@ class PerfilFuncionarioUI:
           nome = st.text_input("Informe o novo nome", op.get_nome())
           email = st.text_input("Informe o novo e-mail", op.get_email())
           fone = st.text_input("Informe o novo fone", op.get_fone())
-          senha = st.text_input("Informe a nova senha", op.get_senha())
-          cpf = st.text_input("Informe o novo cpf", op.get_cpf()),
-              type=("password")
+          senha = st.text_input("Informe a nova senha", op.get_senha(), type="password")
+          cpf = st.text_input("Informe o novo cpf", op.get_cpf())
           if st.button("Atualizar"):
               id = op.get_id()
               try:
