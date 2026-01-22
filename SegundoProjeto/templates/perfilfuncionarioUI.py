@@ -1,6 +1,7 @@
 import streamlit as st
 from views import View
 import time
+
 class PerfilFuncionarioUI:
       def main():
           st.header("Meus Dados")
@@ -15,8 +16,8 @@ class PerfilFuncionarioUI:
               id = op.get_id()
               try:
                   id = op.get_id()
-                  View.cliente_atualizar(id, nome, email, fone, senha)
-                  st.success("Cliente atualizado com sucesso")
+                  View.funcionario_atualizar(id, nome, email, fone, senha, cpf)
+                  st.success("Funcionario atualizado com sucesso")
               except ValueError as erro:
                   st.error(erro)
           time.sleep(2)
