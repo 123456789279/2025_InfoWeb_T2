@@ -16,7 +16,7 @@ class IndexUI:
         if op == "Cadastro de Funcionarios": ManterFuncionarioUI.main()
         if op == "Cadastro de Empregadores": ManterEmpregadorUI.main()
         if op == "Cadastro de Agendamentos": ManterAgendamentoUI.main()
-    def menu_funcionario():
+    def menu_visitante():
         op = st.sidebar.selectbox("Menu", ["Entrar no Sistema",
             "Abrir Conta"])
         if op == "Entrar no Sistema": LoginUI.main()
@@ -33,7 +33,7 @@ class IndexUI:
             admin = st.session_state["usuario_nome"] == "admin"
             st.sidebar.write("Bem-vindo(a), " + st.session_state["usuario_nome"])
             if admin: IndexUI.menu_admin()
-            else: IndexUI.menu_funcionario()
+            else: IndexUI.menu_visitante()
             IndexUI.sair_do_sistema()
     def main():
         # verifica a existe o usuário admin

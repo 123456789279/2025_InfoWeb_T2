@@ -36,7 +36,7 @@ class View:
     def funcionario_criar_admin():
         for c in View.funcionario_listar():
             if c.get_email() == "admin": return
-        View.funcionario_inserir("admin", "admin", "fone", "1234")
+        View.funcionario_inserir("admin", "admin", "fone", "1234", "123")
     def funcionario_autenticar(email, senha):
         for c in View.funcionario_listar():
             if c.get_email() == email and c.get_senha() == senha:
