@@ -11,7 +11,7 @@ class View:
         for obj in View.funcionario_listar():
             if obj.get_email() == email:
                 raise ValueError("funcionario já cadastrado")
-        funcionario = Funcionario(0, nome, email, fone, senha)
+        funcionario = Funcionario(0, nome, email, fone, senha, cpf)
         FuncionarioDAO.inserir(funcionario)
     def funcionario_listar():
         r = FuncionarioDAO.listar()
@@ -19,12 +19,12 @@ class View:
         return r
     def funcionario_listar_id(id):
         return FuncionarioDAO.listar_id(id)
-    def funcionario_atualizar(id, nome, email, fone, senha):
+    def funcionario_atualizar(id, nome, email, fone, senha, cpf):
         # verifica se o email já existe em outro serviço
         for obj in View.funcionario_listar():
             if obj.get_id() != id and obj.get_email() == email:
                 raise ValueError("Email já cadastrado em outro funcionario")
-        funcionario = Funcionario(id, nome, email, fone, senha)
+        funcionario = Funcionario(id, nome, email, fone, senha, cpf)
         FuncionarioDAO.atualizar(funcionario)  
     def funcionario_excluir(id):
         # verifica se o funcionario já foi agendado alguma vez
