@@ -1,6 +1,6 @@
 from datetime import datetime
 
-class :
+class Agendamento:
    def __init__(self, id, data, confirmado, id_funcionario):
       self.set_id(id)
       self.set_data(data)
