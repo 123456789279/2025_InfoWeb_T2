@@ -48,9 +48,9 @@ class View:
         for obj in View.empregador_listar():
             if obj.get_email() == email:
                 raise ValueError("Proficional já cadastrado")
-        empregador = empregador(0, nome, email, senha)
+        empregador = Empregador(0, nome, email, senha)
         EmpregadorDAO.inserir(empregador)
-    def Empregador_listar():
+    def empregador_listar():
         r = EmpregadorDAO.listar()
         r.sort(key = lambda obj : obj.get_nome())
         return r
