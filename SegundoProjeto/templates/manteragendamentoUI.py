@@ -52,7 +52,7 @@ class ManterAgendamentoUI:
        if st.button("Atualizar"):
         try:
             id = op.get_id()
-            View.horario_atualizar(op.get_id(), datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_funcionario, id_servico, id_proficional)
+            View.horario_atualizar(op.get_id(), datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_funcionario)
             st.success("Horário atualizado com sucesso")
         except ValueError as erro:
             st.error(erro)
