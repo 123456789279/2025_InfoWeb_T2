@@ -29,7 +29,7 @@ class View:
     def funcionario_excluir(id):
         # verifica se o funcionario já foi agendado alguma vez
         for obj in View.funcionario_listar():
-            if obj.get_id_funcionario() == id:
+            if obj.get_id() == id:
                 raise ValueError("Funcionario já agendado: não é possível excluir")
         funcionario = Funcionario(id, "", "", "", "")
         FuncionarioDAO.excluir(funcionario) 
