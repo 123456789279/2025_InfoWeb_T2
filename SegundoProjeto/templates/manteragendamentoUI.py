@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 class ManterAgendamentoUI:
    def main():
-     st.header("Cadastro de Agendamentos")
+     st.header("Cadastro de Agendamento")
      tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir", 
         "Atualizar", "Excluir"])
      with tab1: ManterAgendamentoUI.listar()

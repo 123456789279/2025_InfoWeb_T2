@@ -4,7 +4,7 @@ import time
 from views import View
 class ManterEmpregadorUI:
   def main():
-    st.header("Cadastro de Proficionais")
+    st.header("Cadastro de Empregador")
     tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir", "Atualizar", "Excluir"])
     with tab1: ManterEmpregadorUI.listar()
     with tab2: ManterEmpregadorUI.inserir()

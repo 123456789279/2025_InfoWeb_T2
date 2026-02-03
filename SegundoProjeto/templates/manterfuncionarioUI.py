@@ -5,7 +5,7 @@ from views import View
 
 class ManterFuncionarioUI:
   def main():
-    st.header("Cadastro de Clientes")
+    st.header("Cadastro de Funcionario")
     tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir", "Atualizar", "Excluir"])
     with tab1: ManterFuncionarioUI.listar()
     with tab2: ManterFuncionarioUI.inserir()
