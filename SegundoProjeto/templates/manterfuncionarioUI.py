@@ -27,7 +27,7 @@ class ManterFuncionarioUI:
     senha = st.text_input("Informe a senha", type="password")
     if st.button("Inserir"):
       try:
-          View.cliente_inserir(nome, email, fone, senha, cpf)
+          View.funcionario_inserir(nome, email, fone, senha, cpf)
           st.success("Funcionario inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
