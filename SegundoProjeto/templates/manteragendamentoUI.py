@@ -32,7 +32,7 @@ class ManterAgendamentoUI:
       if funcionario != None: 
          id_funcionario= funcionario.get_id()
       try:
-          View.agendamento_inserir(datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id_funcionario)
+          View.agendamento_inserir(datetime.strptime(data, "%d/%m/%Y %H:%M"), confirmado, id)
           st.success("Agendamento inserido com sucesso")
       except ValueError as erro:
           st.error(erro)
